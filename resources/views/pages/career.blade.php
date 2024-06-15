@@ -68,7 +68,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-115.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-115.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Thanuja Dissanayake</a></h2>
@@ -89,7 +89,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-222.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-222.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Nimesha Rajapakshe</a></h2>
@@ -110,7 +110,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-333.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-333.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Dilan Semasinghe</a></h2>
@@ -130,7 +130,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-444.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-444.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Namasivayam Dushanthini</a></h2>

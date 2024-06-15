@@ -16,7 +16,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-11.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-11.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -53,7 +53,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-22.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-22.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -90,7 +90,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-33.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-33.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -127,7 +127,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-44.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-44.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -164,7 +164,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-55.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-55.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -202,14 +202,14 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-66.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-66.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
                             <a href="#" class="course-one__category">Graphic
                                 Design</a><!-- /.course-one__category -->
                             <div class="course-one__admin">
-                                <img src="{{asset("assets/FrontEnd/images/team-1-6.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-1-6.jpg') }}" alt="">
                                 By <a href="">IT Department</a>
                             </div><!-- /.course-one__admin -->
                             <h2 class="course-one__title"><a href="course-details-06.html">Vocational Skill Certificate

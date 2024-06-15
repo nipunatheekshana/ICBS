@@ -10,7 +10,7 @@
         </div><!-- /.container -->
     </section><!-- /.inner-banner -->
     <section class="about-one about-one__about-page">
-        <img src="{{asset("assets/FrontEnd/images/circle-stripe.png")}}" class="about-one__circle" alt="">
+        <img src="{{ asset('assets/images/circle-stripe.png') }}" class="about-one__circle" alt="">
         <div class="container text-center">
             <div class="block-title text-center">
                 <h2 class="block-title__title">Let’s do study with <br>
@@ -19,10 +19,10 @@
             <div class="about-one__img">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="{{asset("assets/FrontEnd/images/about-2-11.jpg")}}" alt="">
+                        <img src="{{ asset('assets/images/about-2-11.jpg') }}" alt="">
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6">
-                        <img src="{{asset("assets/FrontEnd/images/about-2-22.jpg")}}" alt="">
+                        <img src="{{ asset('assets/images/about-2-22.jpg') }}" alt="">
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
                 <div class="about-one__review">
@@ -61,7 +61,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-115.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-115.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Thanuja Dissanayake</a></h2>
@@ -82,7 +82,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-222.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-222.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Nimesha Rajapakshe</a></h2>
@@ -103,7 +103,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-333.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-333.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Dilan Semasinghe</a></h2>
@@ -123,7 +123,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                     <div class="team-one__single">
                         <div class="team-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/team-1-444.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/team-1-444.jpg') }}" alt="">
                         </div><!-- /.team-one__image -->
                         <div class="team-one__content">
                             <h2 class="team-one__name"><a href="team-details.html">Namasivayam Dushanthini</a></h2>
@@ -149,7 +149,7 @@
     </section><!-- /.team-one team-page -->
     <section class="video-one">
         <div class="container">
-            <img src="{{asset("assets/FrontEnd/images/scratch-1-1.png")}}" class="video-one__scratch" alt="">
+            <img src="{{ asset('assets/images/scratch-1-1.png') }}" class="video-one__scratch" alt="">
             <div class="row">
                 <div class="col-lg-6 d-flex align-items-end">
                     <div class="video-one__content">
@@ -179,13 +179,13 @@
             </div><!-- /.block-title -->
             <div class="brand-one__carousel owl-carousel owl-theme">
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/vertical_edited.png")}}" alt="">
+                    <img src="{{ asset('assets/images/vertical_edited.png') }}" alt="">
                 </div><!-- /.item -->
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/login_eye_q.png")}}" alt="">
+                    <img src="{{ asset('assets/images/login_eye_q.png') }}" alt="">
                 </div><!-- /.item -->
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/login_logo_path_finder.png")}}" alt="">
+                    <img src="{{ asset('assets/images/login_logo_path_finder.png') }}" alt="">
                 </div><!-- /.item -->
             </div><!-- /.brand-one__carousel owl-carousel owl-theme -->
         </div><!-- /.container -->
@@ -202,14 +202,15 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">"The internship component was a game-changer. It gave me the
                             chance to apply what I learned and build a portfolio. This opened doors to exciting job
                             opportunities. I can't thank the program enough for jumpstarting my career in UX-UI
                             development."</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-1111.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-1111.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Vasana Vinodani</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -217,13 +218,14 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">“The UX-UI development course exceeded my expectations. The
                             hands-on approach and expert guidance helped me grasp complex concepts effortlessly. I now feel
                             confident in designing user-centric interfaces. Highly recommend!”.</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-22.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-22.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Thyagi Sanjula</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -231,14 +233,15 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">"I can't speak highly enough about the Vocational Back-End
                             Development course! The emphasis on practical, hands-on learning was exactly what I needed to
                             transition into a career as a Back-End Developer.” .</p>
 
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-33.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-33.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Chanika Perera</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -246,14 +249,15 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">“I highly recommend the Vocational Back-End Development course!
                             This program exceeded my expectations in every way. The hands-on approach and practical focus
                             allowed me to quickly acquire valuable skills that are directly applicable in the industry.”.
                         </p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-44.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-44.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Dulaj Shaminda</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -261,13 +265,14 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">“Instructors provided excellent guidance and support throughout.
                             I now feel confident in my ability to tackle real-world development tasks. This course has
                             opened up a world of opportunities for me in the tech industry. Highly recommended!"</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-55.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-55.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Buddika Dissanayake</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -275,13 +280,14 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">“I highly recommend the Vocational Back-End Development course!
                             This program exceeded my expectations in every way. The hands-on approach and practical focus
                             allowed me to quickly acquire valuable skills that are directly applicable in the industry.”</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-66.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-66.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Lakshitha Bandara</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -289,13 +295,14 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">"I cannot recommend the Vocational Skill Diploma for Full-Stack
                             Developer course highly enough! This program has been a transformative experience for me. The
                             comprehensive curriculum and hands-on approach provided a solid foundation in both front-end and
                             back-end development."</p><!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-77.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-77.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Sanduni Madushani</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -303,13 +310,14 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">"Enrolling in the Vocational Skill Certificate for Stand-Alone
                             App Developer was a game-changer for me. The hands-on approach to learning and the comprehensive
                             curriculum provided a solid foundation in app development.”</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-99.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-99.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Wero Santos</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->
@@ -317,14 +325,15 @@
                 <div class="item">
                     <div class="testimonials-one__single">
                         <div class="testimonials-one__qoute">
-                            <img src="{{asset("assets/FrontEnd/images/qoute-1-1.png")}}" alt="">
+                            <img src="{{ asset('assets/images/qoute-1-1.png') }}" alt="">
                         </div><!-- /.testimonials-one__qoute -->
                         <p class="testimonials-one__text">"The Skill Certificate for Computer Programming - Level 02 is an
                             excellent resource for kids interested in coding. The course provides a well-structured
                             progression of skills, starting from the basics and gradually advancing to more challenging
                             concepts. “</p>
                         <!-- /.testimonials-one__text -->
-                        <img src="{{asset("assets/FrontEnd/images/team-1-1414.jpg")}}" alt="" class="testimonials-one__img">
+                        <img src="{{ asset('assets/images/team-1-1414.jpg') }}" alt=""
+                            class="testimonials-one__img">
                         <h3 class="testimonials-one__name">Madhu Madushani</h3><!-- /.testimonials-one__name -->
                         <p class="testimonials-one__designation">Student</p><!-- /.testimonials-one__designation -->
                     </div><!-- /.testimonials-one__single -->

@@ -19,7 +19,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-1-115.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-1-115.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Thanuja Dissanayake</a></h2>
@@ -40,7 +40,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-1-222.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-1-222.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Nimesha Rajapakshe</a></h2>
@@ -61,7 +61,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-1-333.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-1-333.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Dilan Semasinghe</a></h2>
@@ -81,7 +81,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-1-444.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-1-444.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Namasivayam Dushanthini</a></h2>
@@ -108,7 +108,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-3.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-3.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Uresha Senewirathne</a></h2>
@@ -129,7 +129,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-8.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-8.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Sachintha Sampath</a></h2>
@@ -150,7 +150,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-7.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-7.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Madura Jayasinghe</a></h2>
@@ -171,7 +171,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-5.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-5.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Devindi Premarathene</a></h2>
@@ -195,7 +195,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-2.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-2.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Sandya Damayanthi</a></h2>
@@ -216,7 +216,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-4.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-4.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Shanika Jayasinghe</a></h2>
@@ -237,7 +237,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-10.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-10.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Sandareka Dayarathne</a></h2>
@@ -258,7 +258,7 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="team-one__single">
                             <div class="team-one__image">
-                                <img src="{{asset("assets/FrontEnd/images/team-2-11.jpg")}}" alt="">
+                                <img src="{{ asset('assets/images/team-2-11.jpg') }}" alt="">
                             </div><!-- /.team-one__image -->
                             <div class="team-one__content">
                                 <h2 class="team-one__name"><a href="team-details.html">Gayani Gunarathne</a></h2>
@@ -317,5 +317,4 @@
             </div><!-- /.row no-gutters -->
         </div><!-- /.container-fluid -->
     </div><!-- /.cta-two -->
-
 @endsection

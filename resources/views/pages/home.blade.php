@@ -7,8 +7,8 @@
                     <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
                     <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
                     <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
-                    <img src="{{asset("assets/FrontEnd/images/slider-1-scratch.png")}}" alt="" class="banner-one__scratch">
-                    <img src="{{asset("assets/FrontEnd/images/slider-1-person-1.png")}}" class="banner-one__person" alt="">
+                    <img src="{{ asset('assets/images/slider-1-scratch.png') }}" alt="" class="banner-one__scratch">
+                    <img src="{{ asset('assets/images/slider-1-person-1.png') }}" class="banner-one__person" alt="">
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <h3 class="banner-one__title banner-one__light-color">We Can <br>
@@ -24,8 +24,8 @@
                     <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
                     <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
                     <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
-                    <img src="{{asset("assets/FrontEnd/images/slider-1-scratch.png")}}" alt="" class="banner-one__scratch">
-                    <img src="{{asset("assets/FrontEnd/images/slider-1-person-2.png")}}" class="banner-one__person" alt="">
+                    <img src="{{ asset('assets/images/slider-1-scratch.png') }}" alt="" class="banner-one__scratch">
+                    <img src="{{ asset('assets/images/slider-1-person-2.png') }}" class="banner-one__person" alt="">
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <h3 class="banner-one__title banner-one__light-color">We Can <br>
@@ -96,7 +96,7 @@
                 <div class="col-xl-6 d-flex justify-content-xl-end justify-content-sm-center">
                     <div class="about-two__image">
                         <span class="about-two__image-dots"></span><!-- /.about-two__image-dots -->
-                        <img src="{{asset("assets/FrontEnd/images/about-1-1.png")}}" alt="">
+                        <img src="{{ asset('assets/images/about-1-1.png') }}" alt="">
                         <div class="about-two__count">
                             <div class="about-two__count-text">Trusted by
                                 <span class="counter">4890</span>
@@ -123,7 +123,7 @@
                 <div class="item">
                     <div class="course-one__single color-1">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-11.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-11.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -157,7 +157,7 @@
                 <div class="item">
                     <div class="course-one__single color-2">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-22.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-22.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -190,7 +190,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-33.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-33.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -223,7 +223,7 @@
                 <div class="item">
                     <div class="course-one__single color-4">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-44.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-44.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -257,7 +257,7 @@
                 <div class="item">
                     <div class="course-one__single color-5">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-55.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-55.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -291,7 +291,7 @@
                 <div class="item">
                     <div class="course-one__single color-6">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-66.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-66.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -325,7 +325,7 @@
                 <div class="item">
                     <div class="course-one__single color-1">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-77.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-77.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -358,7 +358,7 @@
                 <div class="item">
                     <div class="course-one__single color-2">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-88.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-88.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -392,7 +392,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-99.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-99.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -426,7 +426,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1013.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1013.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -461,7 +461,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1014.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1014.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -496,7 +496,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1015.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1015.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -531,7 +531,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1016.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1016.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -566,7 +566,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1017.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1017.jpg') }}" alt="">
 
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
@@ -603,7 +603,7 @@
                 <div class="item">
                     <div class="course-one__single color-3">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1018.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1018.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -648,7 +648,7 @@
     </section><!-- /.course-one course-page -->
     <section class="video-two">
         <div class="container">
-            <img src="{{asset("assets/FrontEnd/images/scratch-1-1.jpg")}}" class="video-two__scratch" alt="">
+            <img src="{{ asset('assets/images/scratch-1-1.jpg') }}" class="video-two__scratch" alt="">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="video-two__content">
@@ -811,7 +811,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 clearfix">
-                    <img src="{{asset("assets/FrontEnd/images/cta-1.jpg")}}" class="cta-three__image" alt="">
+                    <img src="{{ asset('assets/images/cta-1.jpg') }}" class="cta-three__image" alt="">
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6">
                     <div class="cta-three__content">
@@ -856,13 +856,13 @@
             </div><!-- /.block-title -->
             <div class="brand-one__carousel owl-carousel owl-theme">
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/vertical_edited.png")}}" alt="">
+                    <img src="{{ asset('assets/images/vertical_edited.png') }}" alt="">
                 </div><!-- /.item -->
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/login_eye_q.png")}}" alt="">
+                    <img src="{{ asset('assets/images/login_eye_q.png') }}" alt="">
                 </div><!-- /.item -->
                 <div class="item">
-                    <img src="{{asset("assets/FrontEnd/images/login_logo_path_finder.png")}}" alt="">
+                    <img src="{{ asset('assets/images/login_logo_path_finder.png') }}" alt="">
                 </div><!-- /.item -->
 
 

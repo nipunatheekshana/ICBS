@@ -15,7 +15,7 @@
                 <div class="col-lg-4">
                     <div class="blog-one__single">
                         <div class="blog-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/blog-1-111.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/blog-1-111.jpg') }}" alt="">
 
                             <!-- /.kipso-icon-plus-symbol --></a>
                         </div><!-- /.blog-one__image -->
@@ -40,7 +40,7 @@
                 <div class="col-lg-4">
                     <div class="blog-one__single">
                         <div class="blog-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/blog-1-22.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/blog-1-22.jpg') }}" alt="">
 
                             <!-- /.kipso-icon-plus-symbol --></a>
                         </div><!-- /.blog-one__image -->
@@ -65,7 +65,7 @@
                 <div class="col-lg-4">
                     <div class="blog-one__single">
                         <div class="blog-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/blog-1-33.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/blog-1-33.jpg') }}" alt="">
 
                             <!-- /.kipso-icon-plus-symbol --></a>
                         </div><!-- /.blog-one__image -->
@@ -90,7 +90,7 @@
                 <div class="col-lg-4">
                     <div class="blog-one__single">
                         <div class="blog-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/blog-1-44.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/blog-1-44.jpg') }}" alt="">
 
                             <!-- /.kipso-icon-plus-symbol --></a>
                         </div><!-- /.blog-one__image -->
@@ -142,7 +142,7 @@
                 <div class="col-lg-4">
                     <div class="blog-one__single">
                         <div class="blog-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/blog-1-66.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/blog-1-66.jpg') }}" alt="">
 
                             <!-- /.kipso-icon-plus-symbol --></a>
                         </div><!-- /.blog-one__image -->

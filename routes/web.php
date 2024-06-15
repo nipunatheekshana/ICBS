@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+###################################################
+############### Site Routes ######################
+###################################################
+
 Route::get('/', function () {
     return view("pages.home");
 })->name('home');
@@ -41,3 +46,8 @@ Route::get('/contact', function () {
 Route::get('/join', function () {
     return view("pages.join");
 })->name('join');
+
+
+###################################################
+############### Admin Routes ######################
+###################################################

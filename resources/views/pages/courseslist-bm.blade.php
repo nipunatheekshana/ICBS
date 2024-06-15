@@ -18,7 +18,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-99.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-99.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">
@@ -55,7 +55,7 @@
                 <div class="col-lg-4">
                     <div class="course-one__single">
                         <div class="course-one__image">
-                            <img src="{{asset("assets/FrontEnd/images/course-1-1010.jpg")}}" alt="">
+                            <img src="{{ asset('assets/images/course-1-1010.jpg') }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
                         <div class="course-one__content">

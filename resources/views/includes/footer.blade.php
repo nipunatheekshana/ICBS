@@ -49,8 +49,8 @@
                              industry-relevant training, we empower our students to thrive in today's
                              competitive job market.</p><!-- /.footer-widget__text -->
                         <div class="footer-widget__btn-block">
-                            <a href="contact.html" class="thm-btn">Contact</a><!-- /.thm-btn -->
-                            <a href="join.html" class="thm-btn">Purchase</a><!-- /.thm-btn -->
+                            <a href="{{route('contact')}}" class="thm-btn">Contact</a><!-- /.thm-btn -->
+                            <a href="{{route('join')}}" class="thm-btn">Purchase</a><!-- /.thm-btn -->
                         </div><!-- /.footer-widget__btn-block -->
                     </div><!-- /.footer-widget -->
                 </div><!-- /.col-lg-3 -->
