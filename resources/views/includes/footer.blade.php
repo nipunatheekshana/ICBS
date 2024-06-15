@@ -8,17 +8,17 @@
                         <h2 class="footer-widget__title">Quick Links</h2><!-- /.footer-widget__title -->
                         <div class="footer-widget__link-wrap">
                             <ul class="list-unstyled footer-widget__link-list">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="teachers.html">Teachers</a></li>
-                                <li><a href="departments.html">Departments</a></li>
-                                <li><a href="news.html">Our News</a></li>
+                                <li><a href="{{route('about')}}">About</a></li>
+                                <li><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('teachers')}}">Teachers</a></li>
+                                <li><a href="{{route("departments")}}">Departments</a></li>
+                                <li><a href="{{route('news')}}">Our News</a></li>
                             </ul><!-- /.footer-widget__link-list -->
                             <ul class="list-unstyled footer-widget__link-list">
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="join.html">Register Now</a></li>
-                                <li><a href="career.html">Careers</a></li>
+                                <li><a href="{{route('faq')}}">FAQ</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
+                                <li><a href="{{route('join')}}">Register Now</a></li>
+                                <li><a href="{{route('career')}}">Careers</a></li>
                             </ul><!-- /.footer-widget__link-list -->
                         </div><!-- /.footer-widget__link-wrap -->
                     </div><!-- /.footer-widget -->
