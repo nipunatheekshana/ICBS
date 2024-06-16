@@ -21,7 +21,9 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <!-- End layout styles -->
-    <link rel="stylesheet" href="{{ asset('admin/assets/images/favicon.png') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('admin/assets/images/favicon.png') }}"> --}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}">
 </head>
 
 <body>
@@ -65,4 +67,5 @@
     <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
     <!-- End custom js for this page -->
 </body>
+
 </html>
