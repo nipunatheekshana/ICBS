@@ -51,3 +51,11 @@ Route::get('/join', function () {
 ###################################################
 ############### Admin Routes ######################
 ###################################################
+
+
+Route::get('/admin-dashboard', function () {
+    return view("admin.pages.dashboard");
+})->name('admin-dashboard');
+Route::get('/samplePage', function () {
+    return view("admin.pages.sampleform");
+})->name('sampleform');

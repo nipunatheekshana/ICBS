@@ -5,7 +5,7 @@
             <a href="#">+9475-541 47 53</a>
         </div><!-- /.topbar-one__left -->
         <div class="topbar-one__right">
-            <a href="#">Login</a>
+            <a href="{{route('admin-dashboard')}}">Login</a>
             <a href="#">Register</a>
         </div><!-- /.topbar-one__right -->
     </div><!-- /.container -->
