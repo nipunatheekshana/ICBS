@@ -18,12 +18,18 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
+    <script src="{{ url('admin/assets/js/custom/commonfeaturess.js') }}"></script>
+
+    @yield('head')
+
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
     <!-- End layout styles -->
     {{-- <link rel="stylesheet" href="{{ asset('admin/assets/images/favicon.png') }}"> --}}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicons/favicon-16x16.png') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 <body>
@@ -64,8 +70,9 @@
     <script src="{{ asset('admin/assets/js/jquery.cookie.js') }}"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
+    @yield('script')
     <!-- End custom js for this page -->
+
 </body>
 
 </html>

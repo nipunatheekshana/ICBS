@@ -13,273 +13,29 @@
         <div class="container">
             <div class="row">
 
-
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-1-115.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Thanuja Dissanayake</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Head - school of IT & Curriculum development </p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-1-222.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Nimesha Rajapakshe</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Head - School of Business and finance </p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-1-333.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Dilan Semasinghe</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Head – Kids Department</p><!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-1-444.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Namasivayam Dushanthini</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Head - Language Department</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                </div><!-- /.row -->
-
-
-
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-3.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Uresha Senewirathne</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Senior Lecturer - School of Information Technology</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-8.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Sachintha Sampath</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Lecturer - School of Information Technology </p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-7.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Madura Jayasinghe</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Career Guidance Counselor</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-5.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Devindi Premarathene</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Lecturer - School of Business and Finance</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                </div><!-- /.row -->
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-2.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Sandya Damayanthi</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Assistant Lecturer - Language Department</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-4.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Shanika Jayasinghe</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Assistant Lecturer - Primary Education</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-10.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Sandareka Dayarathne</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Assistant Lecturer – Language Department</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="team-one__single">
-                            <div class="team-one__image">
-                                <img src="{{ asset('assets/images/team-2-11.jpg') }}" alt="">
-                            </div><!-- /.team-one__image -->
-                            <div class="team-one__content">
-                                <h2 class="team-one__name"><a href="team-details.html">Gayani Gunarathne</a></h2>
-                                <!-- /.team-one__name -->
-                                <p class="team-one__designation">Assistant Lecturer - Language Department</p>
-                                <!-- /.team-one__designation -->
-                                <p class="team-one__text"></p>
-                                <!-- /.team-one__text -->
-                            </div><!-- /.team-one__content -->
-                            <div class="team-one__social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                            </div><!-- /.team-one__social -->
-                        </div><!-- /.team-one__single -->
-                    </div><!-- /.col-lg-3 -->
-                </div><!-- /.row -->
-
-
-
+                @foreach ($Teachers as $teacher)
+                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="team-one__single">
+                        <div class="team-one__image">
+                            <img src="{{ asset('uploads/' . $teacher->image) }}"  alt="">
+                        </div><!-- /.team-one__image -->
+                        <div class="team-one__content">
+                            <h2 class="team-one__name"><a href="{{ route('teacher.loadTeacher', $teacher->id) }}">{{ $teacher->name }}</a></h2>
+                            <!-- /.team-one__name -->
+                            <p class="team-one__designation">{{ $teacher->designation }} </p>
+                            <!-- /.team-one__designation -->
+                            <p class="team-one__text"></p>
+                            <!-- /.team-one__text -->
+                        </div><!-- /.team-one__content -->
+                        <div class="team-one__social">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div><!-- /.team-one__social -->
+                    </div><!-- /.team-one__single -->
+                </div><!-- /.col-lg-3 -->
+            @endforeach
 
             </div><!-- /.container -->
     </section><!-- /.team-one team-page -->

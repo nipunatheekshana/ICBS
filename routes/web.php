@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,9 +15,13 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view("pages.about");
 })->name('about');
-Route::get('/teachers', function () {
-    return view("pages.teachers");
-})->name('teachers');
+// Route::get('/teachers', function () {
+//     return view("pages.teachers");
+// })->name('teachers');
+Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
+Route::get('/teachers/loadTeachertoPage/{id}', [TeachersController::class, 'loadTeachertoPage'])->name('teacher.loadTeacher');
+
+
 Route::get('/career', function () {
     return view("pages.career");
 })->name('career');
@@ -72,6 +77,17 @@ Route::middleware(['is.logged'])->group(function () {
         return view("admin.pages.sampleform");
     })->name('sampleform');
 
+    //teaachers
+    Route::get('/teacherList', function () {
+        return view("admin.pages.teacherList");
+    })->name('teacherList');
+    Route::get('/teacherList/loadTeachers', [TeachersController::class, 'loadTeachers']);
+
+    Route::get('/teacher', function () {
+        return view("admin.pages.teacher");
+    })->name('teacher');
+    Route::post('/teacher/save', [TeachersController::class, 'save']);
+    Route::post('/teacher/update', [TeachersController::class, 'update']);
+    Route::get('/teacher/loadTeacher/{id}', [TeachersController::class, 'loadTeacher']);
+
 });
-
-

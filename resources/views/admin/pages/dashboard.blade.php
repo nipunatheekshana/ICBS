@@ -94,7 +94,8 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <img src="admin/assets/images/faces/face1.jpg" class="me-2" alt="image"> David Grey
+                                        <img src="admin/assets/images/faces/face1.jpg" class="me-2" alt="image"> David
+                                        Grey
                                     </td>
                                     <td> Fund is not recieved </td>
                                     <td>
@@ -129,7 +130,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <img src="admin/assets/images/faces/face4.jpg" class="me-2" alt="image"> John Doe
+                                        <img src="admin/assets/images/faces/face4.jpg" class="me-2" alt="image"> John
+                                        Doe
                                     </td>
                                     <td> Loosing control on server </td>
                                     <td>
@@ -145,5 +147,7 @@
             </div>
         </div>
     </div>
- 
+@endsection
+@section('script')
+    <script src="{{ asset('admin/assets/js/dashboard.js') }}"></script>
 @endsection
