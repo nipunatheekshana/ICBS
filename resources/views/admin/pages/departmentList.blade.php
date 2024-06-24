@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     <div class="page-header">
-        <h3 class="page-title"> Teacher List </h3>
+        <h3 class="page-title"> Department List </h3>
         <button type="submit" id="btnCreateNew" style="float: right" class=" btn btn-gradient-primary me-2">Create New</button>
     </div>
     <div class="row">
@@ -18,8 +18,7 @@
                             <thead>
                                 <tr>
                                     <th class="thname"> Name </th>
-                                    <th class="thdesignation"> Designation </th>
-                                    <th class="themail"> Email </th>
+                                    <th class="thCode"> Code </th>
                                     <th class="action"> Action </th>
                                 </tr>
                             </thead>
@@ -34,5 +33,5 @@
 @section('script')
     <!-- DataTable -->
     <script src="{{ url('admin/assets/vendors/dataTable/datatables.min.js') }}"></script>
-    <script src="{{ url('admin/assets/js/custom/teacherList.js') }}"></script>
+    <script src="{{ url('admin/assets/js/custom/departmentList.js') }}"></script>
 @endsection

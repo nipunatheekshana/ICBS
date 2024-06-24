@@ -38,10 +38,13 @@
                 <li>
                     <a href="{{ route('departments') }}">Departments</a>
                     <ul class="sub-menu">
-                        <li><a href="{{ route('courseslist-IT') }}">School of Information Technology</a></li>
+                        @foreach (App\Http\Controllers\DepartmentController::index() as $department)
+                            <li><a href="{{ route('courseslist', $department->id) }}">{{ $department->name }}</a></li>
+                        @endforeach
+                        {{-- <li><a href="{{ route('courseslist-IT') }}">School of Information Technology</a></li>
                         <li><a href="{{ route('courseslist-bm') }}">School of Business & Finance</a></li>
                         <li><a href="{{ route('course-details') }}">School of Languages</a></li>
-                        <li><a href="{{ route('courseslist-kids') }}">School of Kids Studies</a></li>
+                        <li><a href="{{ route('courseslist-kids') }}">School of Kids Studies</a></li> --}}
                     </ul><!-- /.sub-menu -->
                 </li>
 

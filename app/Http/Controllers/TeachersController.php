@@ -20,7 +20,6 @@ class TeachersController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email'],
             'phone_number' => ['required'],
-            'show_on_site' => ['required'],
             'image' => ['image'],
         ]);
 
@@ -56,7 +55,6 @@ class TeachersController extends Controller
             'name' => ['required'],
             'email' => ['required', 'email'],
             'phone_number' => ['required'],
-            'show_on_site' => ['required'],
             'image' => ['image'],
         ]);
         try {
@@ -105,8 +103,14 @@ class TeachersController extends Controller
     public function delete($id)
     {
         try {
-            $BankAccount = BankAccount::where('id', $id)->delete();
-            return $this->responseBody(true, "User", "Bank Account Deleted", null);
+            $Teacher = Teacher::where('id', $id);
+            $img=$Teacher->first()->image;
+            if ($img && file_exists(public_path('uploads/' . $img))) {
+                unlink(public_path('uploads/' . $img));
+            }
+
+            $Teacher->delete();
+            return $this->responseBody(true, "User", "Teacher Deleted", null);
         } catch (Exception $exception) {
             return $this->responseBody(false, "User", "Something went wrong", $exception->getMessage());
         }
@@ -119,25 +123,6 @@ class TeachersController extends Controller
             return $this->responseBody(true, "loadTeacher", "found", $Teacher);
         } catch (Exception $exception) {
             return $this->responseBody(false, "loadTeacher", "error", $exception->getMessage());
-        }
-    }
-    public function loadDropDownData()
-    {
-        try {
-            $Company = Company::where('enabled', true)->get();
-            $BankAccountType = BankAccountType::where('enabled', true)->get();
-            $Bank = Bank::where('enabled', true)->get();
-            $Currency =  Currency::where('enabled', true)->get();
-
-            return $this->responseBody(true, "loadDropDownData", '', [
-                'Company' => $Company,
-                'BankAccountType' => $BankAccountType,
-                'Bank' => $Bank,
-                'Currency' => $Currency,
-
-            ]);
-        } catch (Exception $ex) {
-            return $this->responseBody(false, "loadDropDownData", '', $ex->getMessage());
         }
     }
     public function loadTeachertoPage($id)

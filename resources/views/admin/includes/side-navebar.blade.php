@@ -34,6 +34,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('departmentList') }}">
+                <span class="menu-title">Departments</span>
+                <i class="mdi mdi-home menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                 aria-controls="ui-basic">
                 <span class="menu-title">Basic UI Elements</span>

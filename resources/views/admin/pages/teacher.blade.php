@@ -1,4 +1,5 @@
 @extends('admin.layout.app')
+@section('title', 'Teacher')
 @section('head')
     <!-- DataTable -->
     <link rel="stylesheet" href="{{ url('admin/assets/vendors/dataTable/datatables.min.css') }}" type="text/css">
@@ -85,7 +86,7 @@
                         <div class="col-md-6">
                             <div class="form-check form-check-flat form-check-primary">
                                 <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" checked id="show_on_site" name="show_on_site"> Remember me </label>
+                                  <input type="checkbox" class="form-check-input" checked id="show_on_site" name="show_on_site"> Show on site </label>
                               </div>
                         </div>
                     </div>

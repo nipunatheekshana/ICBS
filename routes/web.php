@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,10 @@ Route::get('/faq', function () {
 Route::get('/departments', function () {
     return view("pages.departments");
 })->name('departments');
+
+Route::get('/courseslist/{id}', [CourseController::class, 'index'])->name('courseslist');
+
+//toremove
 Route::get('/courseslist-IT', function () {
     return view("pages.courseslist-IT");
 })->name('courseslist-IT');
@@ -45,6 +51,9 @@ Route::get('/course-details', function () {
 })->name('course-details');
 Route::get('/courseslist-kids', function () {
     return view("pages.courseslist-kids");
+//toremove end
+
+
 })->name('courseslist-kids');
 Route::get('/contact', function () {
     return view("pages.contact");
@@ -82,6 +91,8 @@ Route::middleware(['is.logged'])->group(function () {
         return view("admin.pages.teacherList");
     })->name('teacherList');
     Route::get('/teacherList/loadTeachers', [TeachersController::class, 'loadTeachers']);
+    Route::delete('/teacherList/delete/{id}', [TeachersController::class, 'delete']);
+
 
     Route::get('/teacher', function () {
         return view("admin.pages.teacher");
@@ -90,4 +101,20 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/teacher/update', [TeachersController::class, 'update']);
     Route::get('/teacher/loadTeacher/{id}', [TeachersController::class, 'loadTeacher']);
 
+
+    //departments
+    Route::get('/departmentList', function () {
+        return view("admin.pages.departmentList");
+    })->name('departmentList');
+    Route::get('/departmentList/loadDepartments', [DepartmentController::class, 'loadDepartments']);
+    Route::delete('/departmentList/delete/{id}', [DepartmentController::class, 'delete']);
+
+
+    Route::get('/department', function () {
+        return view("admin.pages.department");
+    })->name('department');
+    Route::post('/department/save', [DepartmentController::class, 'save']);
+    Route::post('/department/update', [DepartmentController::class, 'update']);
+    Route::get('/department/loadDropDownData', [DepartmentController::class, 'loadDropDownData']);
+    Route::get('/department/loadDepartment/{id}', [DepartmentController::class, 'loadDepartment']);
 });
