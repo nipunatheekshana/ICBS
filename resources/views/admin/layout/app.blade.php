@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/ti-icons/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/vendors/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/tostr-master/tostr.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/toastr/toastr.min.css') }}">
+
 
     <!-- endinject -->
     <!-- Plugin css for this page -->
@@ -63,7 +64,7 @@
     <!-- Plugin js for this page -->
     <script src="{{ asset('admin/assets/vendors/chart.js/chart.umd.js') }}"></script>
     <script src="{{ asset('admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/vendors/tostr-master/tostr.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendors/toastr/toastr.min.js') }}"></script>
 
     <!-- End plugin js for this page -->
     <!-- inject:js -->
@@ -72,6 +73,7 @@
     <script src="{{ asset('admin/assets/js/settings.js') }}"></script>
     <script src="{{ asset('admin/assets/js/todolist.js') }}"></script>
     <script src="{{ asset('admin/assets/js/jquery.cookie.js') }}"></script>
+
 
     <!-- endinject -->
     <!-- Custom js for this page -->

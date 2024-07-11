@@ -117,4 +117,21 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/department/update', [DepartmentController::class, 'update']);
     Route::get('/department/loadDropDownData', [DepartmentController::class, 'loadDropDownData']);
     Route::get('/department/loadDepartment/{id}', [DepartmentController::class, 'loadDepartment']);
+
+    // course
+    Route::get('/courseList', function () {
+        return view("admin.pages.courseList");
+    })->name('courseList');
+    Route::get('/courseList/loadDepartments', [CourseController::class, 'loadDepartments']);
+    Route::delete('/courseList/delete/{id}', [CourseController::class, 'delete']);
+
+
+    Route::get('/course', function () {
+        return view("admin.pages.course");
+    })->name('course');
+    Route::post('/course/save', [CourseController::class, 'save']);
+    Route::post('/course/update', [CourseController::class, 'update']);
+    Route::get('/course/loadDropDownData', [CourseController::class, 'loadDropDownData']);
+    Route::get('/course/loadDepartment/{id}', [CourseController::class, 'loadDepartment']);
+
 });

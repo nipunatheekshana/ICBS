@@ -49,5 +49,5 @@
 @section('script')
     <!-- DataTable -->
     <script src="{{ url('admin/assets/vendors/dataTable/datatables.min.js') }}"></script>
-    <script src="{{ url('admin/assets/js/custom/department.js') }}"></script>
+    <script src="{{ url('admin/assets/js/custom/course.js') }}"></script>
 @endsection
