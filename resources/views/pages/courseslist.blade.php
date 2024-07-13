@@ -27,7 +27,7 @@
 
                                     By <a href="">{{ $course->department->name }}</a>
                                 </div><!-- /.course-one__admin -->
-                                <h2 class="course-one__title"><a href="course-details-01.html">{{ $course->name }}</a></h2>
+                                <h2 class="course-one__title"><a href="{{ route('coursesDetails', $course->id) }}">{{ $course->name }}</a></h2>
                                 <!-- /.course-one__title -->
                                 <div class="course-one__stars">
                                     <span class="course-one__stars-wrap">

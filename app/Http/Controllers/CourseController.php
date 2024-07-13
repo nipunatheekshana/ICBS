@@ -21,9 +21,10 @@ class CourseController extends Controller
     }
     public static function view($id)
     {
-        $Course = Course::find($id)->with('department','courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')->first();
+        $Course = Course::where('id',$id)->with('department','courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')->first();
         $moduleCount=CourseCurriculum::where('course_id',$id)->count();
-        return view("pages.course-details", compact('Course','moduleCount'));
+        $recentCourses = Course::with('department')->latest()->take(3)->get();
+        return view("pages.course-details", compact('Course','moduleCount','recentCourses'));
     }
     public function save(Request $request)
     {

@@ -331,58 +331,27 @@
                     </div><!-- /.course-details__meta -->
                     <div class="course-details__list">
                         <h2 class="course-details__list-title">New Courses</h2><!-- /.course-details__list-title -->
-                        <div class="course-details__list-item">
-                            <div class="course-details__list-img">
-                                <img src="assets/images/lc-1-11.jpg" alt="">
-                            </div><!-- /.course-details__list-img -->
-                            <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>IT Department</span></a>
-                                <h3><a href="#">Full-Stack Developer</a></h3>
-                                <div class="course-details__list-stars">
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <span>4.6</span>
-                                </div><!-- /.course-details__list-stars -->
-                            </div><!-- /.course-details__list-content -->
-                        </div><!-- /.course-details__list-item -->
-                        <div class="course-details__list-item">
-                            <div class="course-details__list-img">
-                                <img src="assets/images/lc-1-22.jpg" alt="">
-                            </div><!-- /.course-details__list-img -->
-                            <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>Business
-                                        Department</span></a>
-                                <h3><a href="#">Research Writing </a></h3>
-                                <div class="course-details__list-stars">
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <span>4.2</span>
-                                </div><!-- /.course-details__list-stars -->
-                            </div><!-- /.course-details__list-content -->
-                        </div><!-- /.course-details__list-item -->
-                        <div class="course-details__list-item">
-                            <div class="course-details__list-img">
-                                <img src="assets/images/lc-1-33.jpg" alt="">
-                            </div><!-- /.course-details__list-img -->
-                            <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>Kids Department</span></a>
-                                <h3><a href="#">IT Programming</a></h3>
-                                <div class="course-details__list-stars">
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
 
-                                    <span>3.8</span>
-                                </div><!-- /.course-details__list-stars -->
-                            </div><!-- /.course-details__list-content -->
-                        </div><!-- /.course-details__list-item -->
+                        @foreach ($recentCourses as $recentCourse)
+                            <div class="course-details__list-item">
+                                <div class="course-details__list-img">
+                                    <img src="{{ asset('uploads/' . $recentCourse->image) }}"  alt="">
+                                </div><!-- /.course-details__list-img -->
+                                <div class="course-details__list-content">
+                                    <a class="course-details__list-author" href="{{ route('courseslist', $recentCourse->department->id) }}" >by <span>{{ $recentCourse->department->name }}</span></a>
+                                    <h3><a href="{{ route('coursesDetails', $recentCourse->id) }}">{{ $recentCourse->name }}</a></h3>
+                                    <div class="course-details__list-stars">
+                                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
+                                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
+                                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
+                                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
+                                        <i class="fas fa-star"></i><!-- /.fas fa-star -->
+                                        <span>4.6</span>
+                                    </div><!-- /.course-details__list-stars -->
+                                </div><!-- /.course-details__list-content -->
+                            </div><!-- /.course-details__list-item -->
+                        @endforeach
+
                     </div><!-- /.course-details__list -->
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
