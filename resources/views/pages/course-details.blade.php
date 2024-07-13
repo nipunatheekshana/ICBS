@@ -1,4 +1,6 @@
 @extends('layout.app')
+
+@section('title', $Course->name)
 @section('content')
     <section class="inner-banner">
         <div class="container">
@@ -14,14 +16,11 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="course-details__content">
-                        <p class="course-details__author">
-                            <img src="{{ asset('assets/images/team-1-1.jpg') }}" alt="">
-                            by <a href="#">Addie Walters</a>
-                        </p><!-- /.course-details__author -->
+
 
                         <div class="course-details__top">
                             <div class="course-details__top-left">
-                                <h2 class="course-details__title">Improve editing skills</h2>
+                                <h2 class="course-details__title">{{ $Course->name }}</h2>
                                 <!-- /.course-details__title -->
                                 <div class="course-one__stars">
                                     <span class="course-one__stars-wrap">
@@ -36,11 +35,11 @@
                                 </div><!-- /.course-one__stars -->
                             </div><!-- /.course-details__top-left -->
                             <div class="course-details__top-right">
-                                <a href="#" class="course-one__category">marketing</a><!-- /.course-one__category -->
+                                <a href="#" class="course-one__category">IT</a><!-- /.course-one__category -->
                             </div><!-- /.course-details__top-right -->
                         </div><!-- /.course-details__top -->
                         <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-d-1.jpg') }}" alt="">
+                            <img src="{{ asset('uploads/' . $Course->image) }}" alt="">
                             <i class="far fa-heart"></i><!-- /.far fa-heart -->
                         </div><!-- /.course-one__image -->
 
@@ -52,132 +51,84 @@
                                 <a class="" role="tab" data-toggle="tab" href="#curriculum">Curriculum</a>
                             </li>
                             <li>
+                                <a class="" role="tab" data-toggle="tab" href="#careers">Careers</a>
+                            </li>
+                            <li>
                                 <a class="" role="tab" data-toggle="tab" href="#review">Reviews</a>
                             </li>
                         </ul><!-- /.course-details__tab-navs list-unstyled -->
                         <div class="tab-content course-details__tab-content ">
                             <div class="tab-pane show active  animated fadeInUp" role="tabpanel" id="overview">
-                                <p class="course-details__tab-text">Aelltes port lacus quis enim var sed efficitur turpis
-                                    gilla
-                                    sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown
-                                    printer took a galley of type and scrambled it to make a type specimen book. It has
-                                    survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged.</p><!-- /.course-details__tab-text -->
+                                <h3 class="course-details__tab-title">{{ $Course->description_title }} </h3>
                                 <br>
-                                <p class="course-details__tab-text">It was popularised in the 1960s with the release of
-                                    Letraset
-                                    sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                                    software
-                                    like Aldus PageMaker including versions of lorem ipsum amet finibus eros. Lorem Ipsum is
-                                    simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                                    industry’s standard dummy text ever since the 1500s, when an unknown printer took a
-                                    galley
-                                    of type and scrambled it to make a type specimen book. It has survived not only five
-                                    centuries, but also the leap into electronic typesetting.</p>
+                                <p class="course-details__tab-text">{{ $Course->description }} </p>
+                                <!-- /.course-details__tab-text -->
+
+
                                 <!-- /.course-details__tab-text -->
                                 <br>
                                 <ul class="list-unstyled course-details__overview-list">
-                                    <li>It has survived not only five centuries</li>
-                                    <li>Lorem Ipsum is simply dummy text of the new design</li>
-                                    <li>Printng and type setting ipsum</li>
-                                    <li>Take a look at our round up of the best shows</li>
+                                    @foreach ($Course->courseDiscriptionBuletlines as $Buletline)
+                                        <li>• {{ $Buletline->buletline }}.</li>
+                                    @endforeach
                                 </ul><!-- /.list-unstyled course-details__overview-list -->
                             </div><!-- /.course-details__tab-content -->
+
+
+
                             <div class="tab-pane  animated fadeInUp" role="tabpanel" id="curriculum">
-                                <h3 class="course-details__tab-title">Starting beginners level course</h3>
+                                <h3 class="course-details__tab-title">{{ $Course->curriculum_title }}</h3>
                                 <!-- /.course-details__title -->
                                 <br>
-                                <p class="course-details__tab-text">Aelltes port lacus quis enim var sed efficitur turpis
-                                    gilla
-                                    sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry’s standard dummy text ever since.</p>
+                                <p class="course-details__tab-text">{{ $Course->curriculum }}</p>
                                 <!-- /.course-details__tab-text -->
                                 <br>
                                 <ul class="course-details__curriculum-list list-unstyled">
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon video-icon">
-                                                <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Introduction to Editing</a> <span>Preview</span>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <div class="course-details__curriculum-list-right">16 minutes</div>
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon video-icon">
-                                                <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Overview of Editing</a> <span>Preview</span>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <div class="course-details__curriculum-list-right">10 minutes</div>
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon file-icon">
-                                                <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Basic Editing Technology</a>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon quiz-icon">
-                                                <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Quiz</a>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <div class="course-details__curriculum-list-right">6 questions</div>
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                </ul><!-- /.course-details__curriculum-list -->
-                                <br><br>
-                                <h3 class="course-details__tab-title">Intermediate Level</h3>
-                                <!-- /.course-details__title -->
-                                <br>
-                                <p class="course-details__tab-text">Aelltes port lacus quis enim var sed efficitur turpis
-                                    gilla
-                                    sed sit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry’s standard dummy text ever since.</p>
-                                <!-- /.course-details__tab-text -->
-                                <br>
-                                <ul class="course-details__curriculum-list list-unstyled">
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon video-icon">
-                                                <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Introduction to Editing</a> <span>Preview</span>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <div class="course-details__curriculum-list-right">16 minutes</div>
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon file-icon">
-                                                <i class="fas fa-folder"></i><!-- /.far fa-folder -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Basic Editing Technology</a>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
-                                    <li>
-                                        <div class="course-details__curriculum-list-left">
-                                            <div class="course-details__meta-icon quiz-icon">
-                                                <i class="fas fa-comment"></i><!-- /.fas fa-play -->
-                                            </div><!-- /.course-details__icon -->
-                                            <a href="#">Quiz</a>
-                                        </div><!-- /.course-details__curriculum-list-left -->
-                                        <div class="course-details__curriculum-list-right">6 questions</div>
-                                        <!-- /.course-details__curriculum-list-right -->
-                                    </li>
+                                    @foreach ($Course->courseCurriculums as $module)
+                                        <li>
+                                            <div class="course-details__curriculum-list-left">
+                                                <div class="course-details__meta-icon file-icon">
+                                                    <i class="fas fa-flag"></i><!-- /.fas fa-play -->
+                                                </div><!-- /.course-details__icon -->
+                                                <a href="#">{{ $module->module }} </a> <span></span>
+                                            </div><!-- /.course-details__curriculum-list-left -->
+                                            <div class="course-details__curriculum-list-right"></div>
+                                            <!-- /.course-details__curriculum-list-right -->
+                                        </li>
+                                    @endforeach
                                 </ul><!-- /.course-details__curriculum-list -->
                             </div><!-- /.course-details__tab-content -->
+
+
+                            <!--Job opputunities starts-->
+                            <!--Job opputunities starts-->
+                            <!--Job opputunities starts-->
+
+                            <div class="tab-pane  animated fadeInUp" role="tabpanel" id="careers">
+                                <h3 class="course-details__tab-title">{{ $Course->career_path_title }}</h3>
+                                <!-- /.course-details__title -->
+                                <br>
+                                <p class="course-details__tab-text">{{ $Course->career_path }}</p>
+                                <!-- /.course-details__tab-text -->
+                                <br>
+                                <ul class="course-details__curriculum-list list-unstyled">
+                                    @foreach ($Course->CourseCareerPaths as $CourseCareerPath)
+                                        <li>
+                                            <div class="course-details__curriculum-list-left">
+                                                <div class="course-details__meta-icon file-icon">
+                                                    <i class="fas fa-flag"></i>
+                                                </div>
+                                                <a href="#">{{ $CourseCareerPath->career_path }}</a> <span></span>
+                                            </div>
+                                            <div class="course-details__curriculum-list-right"></div>
+                                        </li>
+                                    @endforeach
+                                </ul><!-- /.course-details__curriculum-list -->
+                            </div><!-- /.course-details__tab-content -->
+                            <!--Job opputunities ends-->
+
+
+
                             <div class="tab-pane  animated fadeInUp" role="tabpanel" id="review">
                                 <div class="row">
                                     <div class="col-xl-7 d-flex">
@@ -188,7 +139,7 @@
                                                 <div class="course-details__progress-bar">
                                                     <span style="width: 95%"></span>
                                                 </div><!-- /.course-details__progress-bar -->
-                                                <p class="course-details__progress-count">5</p>
+                                                <p class="course-details__progress-count">15</p>
                                                 <!-- /.course-details__progress-count -->
                                             </div><!-- /.course-details__progress-item -->
                                             <div class="course-details__progress-item">
@@ -197,7 +148,7 @@
                                                 <div class="course-details__progress-bar">
                                                     <span style="width: 65%"></span>
                                                 </div><!-- /.course-details__progress-bar -->
-                                                <p class="course-details__progress-count">2</p>
+                                                <p class="course-details__progress-count">10</p>
                                                 <!-- /.course-details__progress-count -->
                                             </div><!-- /.course-details__progress-item -->
                                             <div class="course-details__progress-item">
@@ -206,7 +157,7 @@
                                                 <div class="course-details__progress-bar">
                                                     <span style="width: 33%"></span>
                                                 </div><!-- /.course-details__progress-bar -->
-                                                <p class="course-details__progress-count">1</p>
+                                                <p class="course-details__progress-count">5</p>
                                                 <!-- /.course-details__progress-count -->
                                             </div><!-- /.course-details__progress-item -->
                                             <div class="course-details__progress-item">
@@ -249,13 +200,13 @@
                                     <div class="course-details__comment-single">
                                         <div class="course-details__comment-top">
                                             <div class="course-details__comment-img">
-                                                <img src="{{ asset('assets/images/team-1-1.jpg') }}" alt="">
+                                                <img src="assets/images/team-1-1818.jpg" alt="">
                                             </div><!-- /.course-details__comment-img -->
                                             <div class="course-details__comment-right">
-                                                <h2 class="course-details__comment-name">Steven Meyer</h2>
+                                                <h2 class="course-details__comment-name">Rahal Rathnayake</h2>
                                                 <!-- /.course-details__comment-name -->
                                                 <div class="course-details__comment-meta">
-                                                    <p class="course-details__comment-date">26 July, 2019</p>
+                                                    <p class="course-details__comment-date">01 Feb, 2023</p>
                                                     <!-- /.course-details__comment-date -->
                                                     <div class="course-details__comment-stars">
                                                         <i class="fa fa-star"></i><!-- /.fa fa-star -->
@@ -267,21 +218,27 @@
                                                 </div><!-- /.course-details__comment-meta -->
                                             </div><!-- /.course-details__comment-right -->
                                         </div><!-- /.course-details__comment-top -->
-                                        <p class="course-details__comment-text">Lorem ipsum is simply free text used by
-                                            copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore
-                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <p class="course-details__comment-text">"Enrolling in the Vocational Skill
+                                            Certificate for Stand-Alone App Developer was a
+                                            game-changer for me. The hands-on approach to learning and the comprehensive
+                                            curriculum provided a solid foundation in app
+                                            development. The instructors were not only knowledgeable but also supportive,
+                                            fostering an environment where I could thrive.
+                                            This program has equipped me with the skills and confidence to pursue a career
+                                            in app development, and I highly recommend it
+                                            to anyone looking to enter this dynamic and growing field."</p>
                                         <!-- /.course-details__comment-text -->
                                     </div><!-- /.course-details__comment-single -->
                                     <div class="course-details__comment-single">
                                         <div class="course-details__comment-top">
                                             <div class="course-details__comment-img">
-                                                <img src="{{ asset('assets/images/team-1-2.jpg') }}" alt="">
+                                                <img src="assets/images/team-1-1717.jpg" alt="">
                                             </div><!-- /.course-details__comment-img -->
                                             <div class="course-details__comment-right">
-                                                <h2 class="course-details__comment-name">Lina Kelley</h2>
+                                                <h2 class="course-details__comment-name">Bhagya Dissanayake</h2>
                                                 <!-- /.course-details__comment-name -->
                                                 <div class="course-details__comment-meta">
-                                                    <p class="course-details__comment-date">26 July, 2019</p>
+                                                    <p class="course-details__comment-date">06 Feb, 2023</p>
                                                     <!-- /.course-details__comment-date -->
                                                     <div class="course-details__comment-stars">
                                                         <i class="fa fa-star"></i><!-- /.fa fa-star -->
@@ -293,9 +250,17 @@
                                                 </div><!-- /.course-details__comment-meta -->
                                             </div><!-- /.course-details__comment-right -->
                                         </div><!-- /.course-details__comment-top -->
-                                        <p class="course-details__comment-text">Lorem ipsum is simply free text used by
-                                            copytyping refreshing. Neque porro est qui dolorem ipsum quia quaed inventore
-                                            veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                        <p class="course-details__comment-text">"I am incredibly impressed with the
+                                            Vocational Skill Certificate for Stand-Alone App Developer
+                                            program. The curriculum is well-structured, covering everything from coding to
+                                            UI/UX design. The real-world projects allowed me
+                                            to apply theoretical knowledge to practical scenarios, enhancing my
+                                            problem-solving skills. The program not only focuses on
+                                            technical aspects but also emphasizes the importance of creativity and user
+                                            experience. The industry-relevant skills I gained
+                                            have opened up exciting opportunities, and I'm grateful for the valuable
+                                            education and support provided by this certificate
+                                            program."</p>
                                         <!-- /.course-details__comment-text -->
                                     </div><!-- /.course-details__comment-single -->
                                 </div><!-- /.course-details__comment -->
@@ -326,7 +291,8 @@
                 <div class="col-lg-4">
                     <div class="course-details__price">
                         <p class="course-details__price-text">Course price </p><!-- /.course-details__price-text -->
-                        <p class="course-details__price-amount">$18.00</p><!-- /.course-details__price-amount -->
+                        <p class="course-details__price-amount">LKR {{ $Course->price }}</p>
+                        <!-- /.course-details__price-amount -->
                         <a href="#" class="thm-btn course-details__price-btn">Buy This Course</a><!-- /.thm-btn -->
                     </div><!-- /.course-details__price -->
 
@@ -335,89 +301,85 @@
                             <span class="course-details__meta-icon">
                                 <i class="far fa-clock"></i><!-- /.far fa-clock -->
                             </span><!-- /.course-details__icon -->
-                            Durations: <span>10 hours</span>
+                            Durations: <span>{{ $Course->duration }}</span>
                         </a><!-- /.course-details__meta-link -->
                         <a href="#" class="course-details__meta-link">
                             <span class="course-details__meta-icon">
                                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
                             </span><!-- /.course-details__icon -->
-                            Lectures: <span>6</span>
+                            Modules : <span>{{ $moduleCount }}</span>
                         </a><!-- /.course-details__meta-link -->
                         <a href="#" class="course-details__meta-link">
                             <span class="course-details__meta-icon">
                                 <i class="far fa-user-circle"></i><!-- /.far fa-user-circle -->
                             </span><!-- /.course-details__icon -->
-                            Students: <span>Max 4</span>
+                            Students: <span>Min {{ $Course->min_students }}</span>
                         </a><!-- /.course-details__meta-link -->
-                        <a href="#" class="course-details__meta-link">
-                            <span class="course-details__meta-icon">
-                                <i class="fas fa-play"></i><!-- /.fas fa-play -->
-                            </span><!-- /.course-details__icon -->
-                            Video: <span>8 hours</span>
-                        </a><!-- /.course-details__meta-link -->
+
                         <a href="#" class="course-details__meta-link">
                             <span class="course-details__meta-icon">
                                 <i class="far fa-flag"></i><!-- /.far fa-flag -->
                             </span><!-- /.course-details__icon -->
-                            Skill Level: <span>Advanced</span>
+                            SkillLevel:<span>{{ $Course->skill_level }}</span>
                         </a><!-- /.course-details__meta-link -->
                         <a href="#" class="course-details__meta-link">
                             <span class="course-details__meta-icon">
                                 <i class="far fa-bell"></i><!-- /.far fa-bell -->
                             </span><!-- /.course-details__icon -->
-                            Language: <span>English</span>
+                            Language: <span>{{ $Course->language }}</span>
                         </a><!-- /.course-details__meta-link -->
                     </div><!-- /.course-details__meta -->
                     <div class="course-details__list">
                         <h2 class="course-details__list-title">New Courses</h2><!-- /.course-details__list-title -->
                         <div class="course-details__list-item">
                             <div class="course-details__list-img">
-                                <img src="{{ asset('assets/images/lc-1-1.jpg') }}" alt="">
+                                <img src="assets/images/lc-1-11.jpg" alt="">
                             </div><!-- /.course-details__list-img -->
                             <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                                <h3><a href="#">Marketing strategies</a></h3>
+                                <a class="course-details__list-author" href="#">by <span>IT Department</span></a>
+                                <h3><a href="#">Full-Stack Developer</a></h3>
                                 <div class="course-details__list-stars">
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <span>4.8</span>
+                                    <span>4.6</span>
                                 </div><!-- /.course-details__list-stars -->
                             </div><!-- /.course-details__list-content -->
                         </div><!-- /.course-details__list-item -->
                         <div class="course-details__list-item">
                             <div class="course-details__list-img">
-                                <img src="{{ asset('assets/images/lc-1-2.jpg') }}" alt="">
+                                <img src="assets/images/lc-1-22.jpg" alt="">
                             </div><!-- /.course-details__list-img -->
                             <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                                <h3><a href="#">Marketing strategies</a></h3>
+                                <a class="course-details__list-author" href="#">by <span>Business
+                                        Department</span></a>
+                                <h3><a href="#">Research Writing </a></h3>
                                 <div class="course-details__list-stars">
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <span>4.8</span>
+                                    <span>4.2</span>
                                 </div><!-- /.course-details__list-stars -->
                             </div><!-- /.course-details__list-content -->
                         </div><!-- /.course-details__list-item -->
                         <div class="course-details__list-item">
                             <div class="course-details__list-img">
-                                <img src="{{ asset('assets/images/lc-1-3.jpg') }}" alt="">
+                                <img src="assets/images/lc-1-33.jpg" alt="">
                             </div><!-- /.course-details__list-img -->
                             <div class="course-details__list-content">
-                                <a class="course-details__list-author" href="#">by <span>Lydia Byrd</span></a>
-                                <h3><a href="#">Marketing strategies</a></h3>
+                                <a class="course-details__list-author" href="#">by <span>Kids Department</span></a>
+                                <h3><a href="#">IT Programming</a></h3>
                                 <div class="course-details__list-stars">
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                     <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <i class="fas fa-star"></i><!-- /.fas fa-star -->
-                                    <span>4.8</span>
+
+                                    <span>3.8</span>
                                 </div><!-- /.course-details__list-stars -->
                             </div><!-- /.course-details__list-content -->
                         </div><!-- /.course-details__list-item -->

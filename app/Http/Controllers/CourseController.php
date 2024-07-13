@@ -3,32 +3,88 @@
 namespace App\Http\Controllers;
 
 use App\Http\common\commonFeatures;
+use App\Models\Course;
+use App\Models\CourseCurriculum;
+use App\Models\CourseDiscriptionBuletline;
+use App\Models\CourseCareerPath;
+use App\Models\Department;
 use Exception;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
     use commonFeatures;
-    public static function index(){
-        // return $Departments=Department::all();
-        return view('pages.courseslist-IT');
+    public static function index($id)
+    {
+        $Courses = Course::where('department_id', $id)->with('department')->get();
+        return view('pages.courseslist', compact('Courses'));
+    }
+    public static function view($id)
+    {
+        $Course = Course::find($id)->with('department','courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')->first();
+        $moduleCount=CourseCurriculum::where('course_id',$id)->count();
+        return view("pages.course-details", compact('Course','moduleCount'));
     }
     public function save(Request $request)
     {
+
         $validatedData = $request->validate([
             'name' => ['required'],
-            'code' => ['required'],
         ]);
 
         try {
-            $Department = new Department();
-            $Department->name = $request->name;
-            $Department->code = $request->code;
-            $Department->department_head = $request->department_head;
+            $Course = new Course();
+            $Course->name = $request->name;
+            $Course->price = $request->price;
+            $Course->duration = $request->duration;
+            $Course->min_students = $request->min_students;
+            $Course->skill_level = $request->skill_level;
+            $Course->language = $request->language;
+            $Course->description_title = $request->description_title;
+            $Course->description = $request->description;
+            $Course->curriculum_title = $request->curriculum_title;
+            $Course->curriculum = $request->curriculum;
+            $Course->career_path_title = $request->career_path_title;
+            $Course->career_path = $request->career_path;
+            $Course->department_id = $request->department_id;
 
-            if ($Department->save()) {
-                return $this->responseBody(true, 'save', 'Department Saved', 'Data saved');
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads'), $imageName);
+                $Course->image = $imageName;
             }
+            $Course->save();
+
+            if (!empty($request->description_bulletpoints)) {
+                foreach (json_decode($request->description_bulletpoints) as $bulletpoint) {
+
+                    $bulletline = new CourseDiscriptionBuletline();
+                    $bulletline->course_id = $Course->id;
+                    $bulletline->buletline = $bulletpoint;
+                    $bulletline->save();
+                }
+            }
+            if (!empty($request->modules)) {
+                foreach (json_decode($request->modules) as $module) {
+
+                    $Curriculum = new CourseCurriculum();
+                    $Curriculum->course_id = $Course->id;
+                    $Curriculum->module = $module;
+                    $Curriculum->save();
+                }
+            }
+            if (!empty($request->career_paths)) {
+                foreach (json_decode($request->career_paths) as $career_path) {
+
+                    $CourseCareerPath = new CourseCareerPath();
+                    $CourseCareerPath->course_id = $Course->id;
+                    $CourseCareerPath->career_path = $career_path;
+                    $CourseCareerPath->save();
+                }
+            }
+
+            return $this->responseBody(true, 'save', 'Course Saved', 'Data saved');
         } catch (Exception $exception) {
             return $this->responseBody(false, 'save', 'Something went wrong', $exception->getMessage());
         }
@@ -38,80 +94,139 @@ class CourseController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required'],
-            'code' => ['required'],
         ]);
 
         try {
-            $Department = Department::find($request->id);
-            $Department->name = $request->name;
-            $Department->code = $request->code;
-            $Department->department_head = $request->department_head;
-            $save = $Department->save();
+            CourseDiscriptionBuletline::where('course_id', $request->id)->delete();
+            CourseCurriculum::where('course_id', $request->id)->delete();
+            CourseCareerPath::where('course_id', $request->id)->delete();
+
+
+
+            $Course = Course::find($request->id);
+            $Course->name = $request->name;
+            $Course->price = $request->price;
+            $Course->duration = $request->duration;
+            $Course->min_students = $request->min_students;
+            $Course->skill_level = $request->skill_level;
+            $Course->language = $request->language;
+            $Course->description_title = $request->description_title;
+            $Course->description = $request->description;
+            $Course->curriculum_title = $request->curriculum_title;
+            $Course->curriculum = $request->curriculum;
+            $Course->career_path_title = $request->career_path_title;
+            $Course->career_path = $request->career_path;
+            $Course->department_id = $request->department_id;
+
+            if ($request->hasFile('image')) {
+                // Delete the previous image file if it exists
+                if ($Course->image && file_exists(public_path('uploads/' . $Course->image))) {
+                    unlink(public_path('uploads/' . $Course->image));
+                }
+
+                $image = $request->file('image');
+                $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('uploads'), $imageName);
+                $Course->image = $imageName;
+            }
+            $save = $Course->save();
+
+            if (!empty($request->description_bulletpoints)) {
+                foreach (json_decode($request->description_bulletpoints) as $bulletpoint) {
+
+                    $bulletline = new CourseDiscriptionBuletline();
+                    $bulletline->course_id = $Course->id;
+                    $bulletline->buletline = $bulletpoint;
+                    $bulletline->save();
+                }
+            }
+            if (!empty($request->modules)) {
+                foreach (json_decode($request->modules) as $module) {
+
+                    $Curriculum = new CourseCurriculum();
+                    $Curriculum->course_id = $Course->id;
+                    $Curriculum->module = $module;
+                    $Curriculum->save();
+                }
+            }
+            if (!empty($request->career_paths)) {
+                foreach (json_decode($request->career_paths) as $career_path) {
+
+                    $CourseCareerPath = new CourseCareerPath();
+                    $CourseCareerPath->course_id = $Course->id;
+                    $CourseCareerPath->career_path = $career_path;
+                    $CourseCareerPath->save();
+                }
+            }
+
 
             if ($save) {
-                return $this->responseBody(true, "save", "Department Saved", 'data saved');
+                return $this->responseBody(true, "save", "Course Saved", 'data saved');
             }
         } catch (Exception $exception) {
             return $this->responseBody(false, "save", "Something went wrong", $exception->getMessage());
         }
     }
 
-    public function loadDepartments()
+    public function loadCourses()
     {
         try {
-            $Department = Department::orderBy('id', 'ASC')
+
+            $courses = Course::with('department')
+                ->orderBy('id', 'ASC')
                 ->get();
 
-            return $this->responseBody(true, "loadDepartments", "found", $Department);
+            return $this->responseBody(true, "loadCourses", "found", $courses);
         } catch (Exception $ex) {
-            return $this->responseBody(false, "loadDepartments", "Something went wrong", $ex->getMessage());
+            return $this->responseBody(false, "loadCourses", "Something went wrong", $ex->getMessage());
         }
     }
     public function delete($id)
     {
         try {
-            $Department = Department::where('id', $id);
-            $img=$Department->first()->image;
+            $Course = Course::where('id', $id);
+            $img = $Course->first()->image;
             if ($img && file_exists(public_path('uploads/' . $img))) {
                 unlink(public_path('uploads/' . $img));
             }
 
-            $Department->delete();
-            return $this->responseBody(true, "User", "Department Deleted", null);
+            $Course->delete();
+            return $this->responseBody(true, "User", "Course Deleted", null);
         } catch (Exception $exception) {
             return $this->responseBody(false, "User", "Something went wrong", $exception->getMessage());
         }
     }
 
-    public function loadDepartment($id)
+    public function loadCourse($id)
     {
         try {
-            $Department = Department::where('id', $id)->first();
-            return $this->responseBody(true, "loadDepartment", "found", $Department);
+            $Course = Course::where('id', $id)
+            ->with('courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')
+            ->first();
+            return $this->responseBody(true, "loadCourse", "found", $Course);
         } catch (Exception $exception) {
-            return $this->responseBody(false, "loadDepartment", "error", $exception->getMessage());
+            return $this->responseBody(false, "loadCourse", "error", $exception->getMessage());
         }
     }
     public function loadDropDownData()
     {
         try {
-            $Teacher = Teacher::all('name', 'id');
+            $Department = Department::all('name', 'id');
 
             return $this->responseBody(true, "loadDropDownData", '', [
-                'Teacher' => $Teacher,
+                'Department' => $Department,
             ]);
         } catch (Exception $ex) {
             return $this->responseBody(false, "loadDropDownData", '', $ex->getMessage());
         }
     }
-    public function loadDepartmenttoPage($id)
+    public function loadCoursetoPage($id)
     {
         try {
-            $Department = Department::where('id', $id)->first();
-            return view("pages.Department-dtails", compact('Department'));
+            $Course = Course::where('id', $id)->first();
+            return view("pages.Course-dtails", compact('Course'));
         } catch (Exception $exception) {
-            return $this->responseBody(false, "loadDepartmenttoPage", "error", $exception->getMessage());
+            return $this->responseBody(false, "loadCoursetoPage", "error", $exception->getMessage());
         }
     }
 }
-

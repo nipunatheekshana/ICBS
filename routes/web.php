@@ -38,6 +38,8 @@ Route::get('/departments', function () {
 })->name('departments');
 
 Route::get('/courseslist/{id}', [CourseController::class, 'index'])->name('courseslist');
+Route::get('/coursesDetails/{id}', [CourseController::class, 'view'])->name('coursesDetails');
+
 
 //toremove
 Route::get('/courseslist-IT', function () {
@@ -122,7 +124,7 @@ Route::middleware(['is.logged'])->group(function () {
     Route::get('/courseList', function () {
         return view("admin.pages.courseList");
     })->name('courseList');
-    Route::get('/courseList/loadDepartments', [CourseController::class, 'loadDepartments']);
+    Route::get('/courseList/loadCourses', [CourseController::class, 'loadCourses']);
     Route::delete('/courseList/delete/{id}', [CourseController::class, 'delete']);
 
 
@@ -132,6 +134,6 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/course/save', [CourseController::class, 'save']);
     Route::post('/course/update', [CourseController::class, 'update']);
     Route::get('/course/loadDropDownData', [CourseController::class, 'loadDropDownData']);
-    Route::get('/course/loadDepartment/{id}', [CourseController::class, 'loadDepartment']);
+    Route::get('/course/loadCourse/{id}', [CourseController::class, 'loadCourse']);
 
 });

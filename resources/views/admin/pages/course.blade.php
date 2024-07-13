@@ -73,36 +73,190 @@
                                         placeholder="Language">
                                 </div>
                             </div>
+                            <hr>
+                            {{-- acordination bigin --}}
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Description
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-12 mt-3">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Description Title</label>
+                                                        <input type="text" class="form-control" id="description_title"
+                                                            name="description_title" placeholder="Language">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputDescription">Description</label>
+                                                        <textarea class="form-control" id="description" name="description" placeholder="Description" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Description Bullet Point</label>
+                                                        <input type="text" class="form-control"
+                                                            id="description_bullet_point" name="description_bullet_oint"
+                                                            placeholder="Bullet Point">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button type="button" id="btnAddBulletPoint"
+                                                        class="btn btn-gradient-primary btn-rounded btn-icon mt-4">
+                                                        <i class="mdi mdi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="exampleInputDescription">Description</label>
-                                    <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                                            <div class="table-responsive">
+                                                <table class="table w-100" id="tableDiscriptionBulletPoints">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="thBulletPoint"> Bullet Point </th>
+                                                            <th class="action"> Action </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Curriculum
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Curriculum Title</label>
+                                                        <input type="text" class="form-control" id="curriculum_title"
+                                                            name="curriculum_title" placeholder="Language">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputCurriculum">Curriculum</label>
+                                                        <textarea class="form-control" id="curriculum" name="curriculum" placeholder="Curriculum" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Course Module</label>
+                                                        <input type="text" class="form-control"
+                                                            id="course_module" name="course_module"
+                                                            placeholder="Bullet Point">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button type="button" id="btnAddModule"
+                                                        class="btn btn-gradient-primary btn-rounded btn-icon mt-4">
+                                                        <i class="mdi mdi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table w-100" id="tableModules">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="thModule"> Module </th>
+                                                            <th class="action"> Action </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Career Path
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Career Path Title</label>
+                                                        <input type="text" class="form-control" id="career_path_title"
+                                                            name="career_path_title" placeholder="Language">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputCareerPath">Career Path Discription</label>
+                                                        <textarea class="form-control" id="career_path" name="career_path" placeholder="Career Path" rows="10"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="form-group">
+                                                        <label for="exampleInputLanguage">Career Path</label>
+                                                        <input type="text" class="form-control"
+                                                            id="course_career_path"
+                                                            placeholder="Bullet Point">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button type="button" id="btnAddCareerPath"
+                                                        class="btn btn-gradient-primary btn-rounded btn-icon mt-4">
+                                                        <i class="mdi mdi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table w-100" id="tableCareerPath">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="thCareerPath"> Career Path </th>
+                                                            <th class="action"> Action </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            {{-- acordination end --}}
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="exampleInputCurriculum">Curriculum</label>
-                                    <textarea class="form-control" id="curriculum" name="curriculum" placeholder="Curriculum"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="exampleInputCareerPath">Career Path</label>
-                                    <textarea class="form-control" id="career_path" name="career_path" placeholder="Career Path"></textarea>
-                                </div>
-                            </div>
+
+
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
 @endsection
 @section('script')
     <!-- DataTable -->
     <script src="{{ url('admin/assets/vendors/dataTable/datatables.min.js') }}"></script>
-    <script src="{{ url('admin/assets/js/custom/department.js') }}"></script>
+    <script src="{{ url('admin/assets/js/custom/course.js') }}"></script>
 @endsection

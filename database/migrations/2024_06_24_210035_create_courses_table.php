@@ -20,8 +20,11 @@ return new class extends Migration
             $table->string('min_students');
             $table->string('skill_level');
             $table->string('language');
+            $table->string('description_title');
             $table->longText('description');
+            $table->string('curriculum_title');
             $table->longText('curriculum');
+            $table->string('career_path_title');
             $table->longText('career_path');
             $table->foreignId('department_id')->constrained(
                 table: 'departments', indexName: 'department_id'

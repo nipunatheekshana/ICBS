@@ -23,20 +23,20 @@ $(document).ready(function () {
         ],
     });
 
-    loadDepartments();
+    loadCourses();
 });
 
-function loadDepartments() {
+function loadCourses() {
     $.ajax({
         type: 'GET',
-        url: '/course/loadDepartments',
+        url: '/courseList/loadCourses',
         success: function (response) {
             console.log(response);
             if (response.success) {
                 var data = response.result.map(function (item) {
                     return {
                         "thname": item.name,
-                        "thDepartment": item.code,
+                        "thDepartment": item.department.name,
                         "action": '<i class="fa fa-pencil-square-o fa-2x text-primary m-2" aria-hidden="true" onclick="edit(' + item.id + ')"></i>' +
                                   '<i class="fa fa-trash fa-2x text-danger" aria-hidden="true"  onclick="_delete(' + item.id + ')"></i>'
                     };
@@ -55,13 +55,13 @@ function _delete(id) {
     $.ajax({
         type: 'DELETE',
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-        url: '/course/delete/' + id,
+        url: '/courseList/delete/' + id,
         success: function (response) {
             console.log(response);
 
             if (response.success) {
                 alert(response.message);
-                loadDepartments();
+                loadCourses();
             }
         }, error: function (data) {
             console.log(data);
