@@ -54,13 +54,13 @@
 
 
             </div><!-- /.row -->
-            <div class="post-pagination">
+            {{-- <div class="post-pagination">
                 <a href="#"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
                 <a class="active" href="courseslist-IT.html">1</a>
                 <a href="courseslist-IT2.html">2</a>
 
                 <a href="#"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
-            </div><!-- /.post-pagination -->
+            </div><!-- /.post-pagination --> --}}
 
         </div><!-- /.container -->
     </section><!-- /.course-one course-page -->

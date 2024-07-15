@@ -5,8 +5,13 @@
             <a href="#">+9475-541 47 53</a>
         </div><!-- /.topbar-one__left -->
         <div class="topbar-one__right">
-            <a href="{{route('admin-login')}}">Login</a>
-            <a href="#">Register</a>
+            @if (Auth::check())
+                <a href="{{ route('logout') }}">{{ Auth::user()->email }}</a>
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('student-register') }}">Register</a>
+            @endif
+
         </div><!-- /.topbar-one__right -->
     </div><!-- /.container -->
 </div><!-- /.topbar-one -->

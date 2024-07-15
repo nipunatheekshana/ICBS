@@ -38,7 +38,7 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                                        placeholder="Username">
+                                        placeholder="email">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="password" class="form-control form-control-lg"
@@ -54,7 +54,7 @@
                                         <label class="form-check-label text-muted">
                                             <input type="checkbox" class="form-check-input"> Keep me signed in </label>
                                     </div>
-                                    <a href="#" class="auth-link text-primary">Forgot password?</a>
+                                    <a href="{{route('student-register')}}" class="auth-link text-primary">Register</a>
                                 </div>
 
                             </form>

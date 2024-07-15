@@ -264,26 +264,30 @@
                                         <!-- /.course-details__comment-text -->
                                     </div><!-- /.course-details__comment-single -->
                                 </div><!-- /.course-details__comment -->
-                                <form action="#" class="course-details__comment-form">
-                                    <h2 class="course-details__title">Add a review</h2><!-- /.course-details__title -->
-                                    <p class="course-details__comment-form-text">Rate this Course? <a href="#"
-                                            class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a
-                                            href="#" class="fas fa-star"></a><a href="#"
-                                            class="fas fa-star"></a><a href="#" class="fas fa-star"></a></p>
-                                    <!-- /.course-details__coment-form-text -->
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <input type="text" placeholder="Your Name">
-                                            <input type="text" placeholder="Email Address">
-                                        </div><!-- /.col-lg-6 -->
-                                        <div class="col-lg-12">
-                                            <textarea placeholder="Write Message"></textarea>
-                                            <button type="submit" class="thm-btn course-details__comment-form-btn">Leave
-                                                a
-                                                Review</button>
-                                        </div><!-- /.col-lg-12 -->
-                                    </div><!-- /.row -->
-                                </form><!-- /.course-details__comment-form -->
+                                @if (Auth::check() && Auth::user()->user_type == 2)
+                                    <form action="#" class="course-details__comment-form">
+                                        <h2 class="course-details__title">Add a review</h2><!-- /.course-details__title -->
+                                        <p class="course-details__comment-form-text">Rate this Course? <a href="#"
+                                                class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a
+                                                href="#" class="fas fa-star"></a><a href="#"
+                                                class="fas fa-star"></a><a href="#" class="fas fa-star"></a></p>
+                                        <!-- /.course-details__coment-form-text -->
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <input type="text" placeholder="Your Name">
+                                                <input type="text" placeholder="Email Address">
+                                            </div><!-- /.col-lg-6 -->
+                                            <div class="col-lg-12">
+                                                <textarea placeholder="Write Message"></textarea>
+                                                <button type="submit"
+                                                    class="thm-btn course-details__comment-form-btn">Leave
+                                                    a
+                                                    Review</button>
+                                            </div><!-- /.col-lg-12 -->
+                                        </div><!-- /.row -->
+                                    </form><!-- /.course-details__comment-form -->
+                                @endif
+
                             </div><!-- /.course-details__tab-content -->
                         </div><!-- /.tab-content -->
                     </div><!-- /.course-details__content -->
@@ -335,11 +339,15 @@
                         @foreach ($recentCourses as $recentCourse)
                             <div class="course-details__list-item">
                                 <div class="course-details__list-img">
-                                    <img src="{{ asset('uploads/' . $recentCourse->image) }}"  alt="">
+                                    <img src="{{ asset('uploads/' . $recentCourse->image) }}" alt="">
                                 </div><!-- /.course-details__list-img -->
                                 <div class="course-details__list-content">
-                                    <a class="course-details__list-author" href="{{ route('courseslist', $recentCourse->department->id) }}" >by <span>{{ $recentCourse->department->name }}</span></a>
-                                    <h3><a href="{{ route('coursesDetails', $recentCourse->id) }}">{{ $recentCourse->name }}</a></h3>
+                                    <a class="course-details__list-author"
+                                        href="{{ route('courseslist', $recentCourse->department->id) }}">by
+                                        <span>{{ $recentCourse->department->name }}</span></a>
+                                    <h3><a
+                                            href="{{ route('coursesDetails', $recentCourse->id) }}">{{ $recentCourse->name }}</a>
+                                    </h3>
                                     <div class="course-details__list-stars">
                                         <i class="fas fa-star"></i><!-- /.fas fa-star -->
                                         <i class="fas fa-star"></i><!-- /.fas fa-star -->

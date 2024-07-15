@@ -3,6 +3,7 @@
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,7 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view("pages.about");
 })->name('about');
-// Route::get('/teachers', function () {
-//     return view("pages.teachers");
-// })->name('teachers');
+
 Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
 Route::get('/teachers/loadTeachertoPage/{id}', [TeachersController::class, 'loadTeachertoPage'])->name('teacher.loadTeacher');
 
@@ -41,22 +40,7 @@ Route::get('/courseslist/{id}', [CourseController::class, 'index'])->name('cours
 Route::get('/coursesDetails/{id}', [CourseController::class, 'view'])->name('coursesDetails');
 
 
-//toremove
-Route::get('/courseslist-IT', function () {
-    return view("pages.courseslist-IT");
-})->name('courseslist-IT');
-Route::get('/courseslist-bm', function () {
-    return view("pages.courseslist-bm");
-})->name('courseslist-bm');
-Route::get('/course-details', function () {
-    return view("pages.course-details");
-})->name('course-details');
-Route::get('/courseslist-kids', function () {
-    return view("pages.courseslist-kids");
-//toremove end
 
-
-})->name('courseslist-kids');
 Route::get('/contact', function () {
     return view("pages.contact");
 })->name('contact');
@@ -65,18 +49,24 @@ Route::get('/join', function () {
 })->name('join');
 
 
+Route::get('/student-register', function () {
+    return view("pages.register");
+})->name('student-register');
+Route::post('/registerStudent', [RegisterController::class, 'RegisterStudent']);
+
+
 ###################################################
 ############### Admin Routes ######################
 ###################################################
 
 Route::get('/admin-login', function () {
     return view("admin.pages.login");
-})->name('admin-login');
+})->name('login');
 //login
 Route::post('/logAdmin', [LogInController::class, 'login']);
 
 //logout
-Route::get('/logoutAdmin', [LogInController::class, 'logout'])->name('logout-admin');
+Route::get('/logoutAdmin', [LogInController::class, 'logout'])->name('logout');
 
 //Auth Routes
 Route::middleware(['is.logged'])->group(function () {
@@ -135,5 +125,4 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/course/update', [CourseController::class, 'update']);
     Route::get('/course/loadDropDownData', [CourseController::class, 'loadDropDownData']);
     Route::get('/course/loadCourse/{id}', [CourseController::class, 'loadCourse']);
-
 });

@@ -18,8 +18,16 @@ class LogInController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password], true)) {
             // Authentication passed...
             // return "200";
-
-            return ['status'=>'200','role'=>Auth::user()->role];
+            $url="";
+            switch (Auth::user()->user_type) {
+                case 1:
+                    $url = '/admin-dashboard';
+                    break;
+                case 2:
+                    $url = '/';
+                    break;
+            }
+            return ['status'=>'200','url'=>$url];
         } else {
             return "201";
         }

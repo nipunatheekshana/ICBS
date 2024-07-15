@@ -9,7 +9,7 @@ $(document).ready(function () {
             success: function (response) {
                 console.log(response);
                 if (response.status == '200') {
-                    location.href = '/admin-dashboard';
+                    location.href = response.url;
                 } else {
                     alert('Wrong Login Details....');
                 }
