@@ -34,7 +34,6 @@ class FAQController extends Controller
             return $this->responseBody(false, 'save', 'Something went wrong', $exception->getMessage());
         }
     }
-
     public function update(Request $request)
     {
         $validatedData = $request->validate([
@@ -55,7 +54,6 @@ class FAQController extends Controller
             return $this->responseBody(false, "save", "Something went wrong", $exception->getMessage());
         }
     }
-
     public function loadFAQs()
     {
         try {
@@ -76,7 +74,6 @@ class FAQController extends Controller
             return $this->responseBody(false, "User", "Something went wrong", $exception->getMessage());
         }
     }
-
     public function loadFAQ($id)
     {
         try {
@@ -86,6 +83,4 @@ class FAQController extends Controller
             return $this->responseBody(false, "loadFAQ", "error", $exception->getMessage());
         }
     }
-
-
 }

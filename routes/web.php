@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeachersController;
 use Illuminate\Support\Facades\Route;
@@ -27,9 +28,9 @@ Route::get('/teachers/loadTeachertoPage/{id}', [TeachersController::class, 'load
 Route::get('/career', function () {
     return view("pages.career");
 })->name('career');
-Route::get('/news', function () {
-    return view("pages.news");
-})->name('news');
+
+
+Route::get('/news-page', [NewsController::class, 'index'])->name('news');
 
 Route::get('/faq', [FAQController::class, 'index'])->name('faq');
 
@@ -143,4 +144,19 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/FAQ/save', [FAQController::class, 'save']);
     Route::post('/FAQ/update', [FAQController::class, 'update']);
     Route::get('/FAQ/loadFAQ/{id}', [FAQController::class, 'loadFAQ']);
+
+    //News
+    Route::get('/newsList', function () {
+        return view("admin.pages.newsList");
+    })->name('newsList');
+    Route::get('/newsList/loadnewss', [NewsController::class, 'loadnewss']);
+    Route::delete('/newsList/delete/{id}', [NewsController::class, 'delete']);
+
+
+    Route::get('/news', function () {
+        return view("admin.pages.news");
+    });
+    Route::post('/news/save', [NewsController::class, 'save']);
+    Route::post('/news/update', [NewsController::class, 'update']);
+    Route::get('/news/loadnews/{id}', [NewsController::class, 'loadnews']);
 });

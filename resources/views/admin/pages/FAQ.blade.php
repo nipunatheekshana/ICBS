@@ -6,7 +6,7 @@
 @endsection
 @section('content')
     <div class="page-header">
-        <h3 class="page-title"> Department </h3>
+        <h3 class="page-title"> FAQ </h3>
         <button type="button" id="btnSave" style="float: right" class=" btn btn-gradient-primary me-2">Save</button>
     </div>
     <div class="row">

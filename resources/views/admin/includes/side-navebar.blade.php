@@ -48,7 +48,13 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('FAQList') }}">
                 <span class="menu-title">FAQs</span>
-                <i class="mdi mdi-note-outline menu-icon"></i>
+                <i class="mdi mdi-comment-text-outline menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('newsList') }}">
+                <span class="menu-title">News</span>
+                <i class="mdi mdi-newspaper menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">
