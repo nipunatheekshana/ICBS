@@ -197,16 +197,20 @@
                                     </div><!-- /.col-lg-4 -->
                                 </div><!-- /.row -->
                                 <div class="course-details__comment">
+                                    @foreach ($Course->courseReviews as $courseReview)
+
                                     <div class="course-details__comment-single">
                                         <div class="course-details__comment-top">
                                             <div class="course-details__comment-img">
-                                                <img src="assets/images/team-1-1818.jpg" alt="">
+                                                <img src="{{ asset('uploads/' . $courseReview->user->image) }}"  alt="">
                                             </div><!-- /.course-details__comment-img -->
                                             <div class="course-details__comment-right">
-                                                <h2 class="course-details__comment-name">Rahal Rathnayake</h2>
+                                                <h2 class="course-details__comment-name">{{ $courseReview->user->name}}</h2>
                                                 <!-- /.course-details__comment-name -->
                                                 <div class="course-details__comment-meta">
-                                                    <p class="course-details__comment-date">01 Feb, 2023</p>
+                                                    <p class="course-details__comment-date">{{ $courseReview->created_at->diffForHumans()}}</p>
+                                                    {{-- <p class="course-details__comment-date">01 Feb, 2023</p> --}}
+
                                                     <!-- /.course-details__comment-date -->
                                                     <div class="course-details__comment-stars">
                                                         <i class="fa fa-star"></i><!-- /.fa fa-star -->
@@ -218,54 +222,16 @@
                                                 </div><!-- /.course-details__comment-meta -->
                                             </div><!-- /.course-details__comment-right -->
                                         </div><!-- /.course-details__comment-top -->
-                                        <p class="course-details__comment-text">"Enrolling in the Vocational Skill
-                                            Certificate for Stand-Alone App Developer was a
-                                            game-changer for me. The hands-on approach to learning and the comprehensive
-                                            curriculum provided a solid foundation in app
-                                            development. The instructors were not only knowledgeable but also supportive,
-                                            fostering an environment where I could thrive.
-                                            This program has equipped me with the skills and confidence to pursue a career
-                                            in app development, and I highly recommend it
-                                            to anyone looking to enter this dynamic and growing field."</p>
+                                        <p class="course-details__comment-text">"{{ $courseReview->review}}"</p>
                                         <!-- /.course-details__comment-text -->
                                     </div><!-- /.course-details__comment-single -->
-                                    <div class="course-details__comment-single">
-                                        <div class="course-details__comment-top">
-                                            <div class="course-details__comment-img">
-                                                <img src="assets/images/team-1-1717.jpg" alt="">
-                                            </div><!-- /.course-details__comment-img -->
-                                            <div class="course-details__comment-right">
-                                                <h2 class="course-details__comment-name">Bhagya Dissanayake</h2>
-                                                <!-- /.course-details__comment-name -->
-                                                <div class="course-details__comment-meta">
-                                                    <p class="course-details__comment-date">06 Feb, 2023</p>
-                                                    <!-- /.course-details__comment-date -->
-                                                    <div class="course-details__comment-stars">
-                                                        <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                                                        <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                                                        <i class="fa fa-star"></i><!-- /.fa fa-star -->
-                                                        <i class="fa fa-star star-disabled"></i><!-- /.fa fa-star -->
-                                                        <i class="fa fa-star star-disabled"></i><!-- /.fa fa-star -->
-                                                    </div><!-- /.course-details__comment-stars -->
-                                                </div><!-- /.course-details__comment-meta -->
-                                            </div><!-- /.course-details__comment-right -->
-                                        </div><!-- /.course-details__comment-top -->
-                                        <p class="course-details__comment-text">"I am incredibly impressed with the
-                                            Vocational Skill Certificate for Stand-Alone App Developer
-                                            program. The curriculum is well-structured, covering everything from coding to
-                                            UI/UX design. The real-world projects allowed me
-                                            to apply theoretical knowledge to practical scenarios, enhancing my
-                                            problem-solving skills. The program not only focuses on
-                                            technical aspects but also emphasizes the importance of creativity and user
-                                            experience. The industry-relevant skills I gained
-                                            have opened up exciting opportunities, and I'm grateful for the valuable
-                                            education and support provided by this certificate
-                                            program."</p>
-                                        <!-- /.course-details__comment-text -->
-                                    </div><!-- /.course-details__comment-single -->
+                                    @endforeach
+
+
                                 </div><!-- /.course-details__comment -->
                                 @if (Auth::check() && Auth::user()->user_type == 2)
-                                    <form action="#" class="course-details__comment-form">
+                                    <form action="{{ route('addReview', $Course->id) }}"
+                                        class="course-details__comment-form">
                                         <h2 class="course-details__title">Add a review</h2><!-- /.course-details__title -->
                                         <p class="course-details__comment-form-text">Rate this Course? <a href="#"
                                                 class="fas fa-star"></a><a href="#" class="fas fa-star"></a><a
@@ -273,12 +239,18 @@
                                                 class="fas fa-star"></a><a href="#" class="fas fa-star"></a></p>
                                         <!-- /.course-details__coment-form-text -->
                                         <div class="row">
-                                            <div class="col-lg-6">
-                                                <input type="text" placeholder="Your Name">
-                                                <input type="text" placeholder="Email Address">
-                                            </div><!-- /.col-lg-6 -->
                                             <div class="col-lg-12">
-                                                <textarea placeholder="Write Message"></textarea>
+                                                @if (session('success'))
+                                                    <div class="alert alert-success" role="alert">
+                                                        {{ session('success') }}
+                                                    </div>
+                                                @endif
+                                                @error('review')
+                                                    <div class="alert alert-danger" role="alert">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                                <textarea placeholder="Write Message" name="review" id="review"></textarea>
                                                 <button type="submit"
                                                     class="thm-btn course-details__comment-form-btn">Leave
                                                     a

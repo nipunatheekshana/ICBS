@@ -38,6 +38,8 @@ Route::get('/departments', function () {
 
 Route::get('/courseslist/{id}', [CourseController::class, 'index'])->name('courseslist');
 Route::get('/coursesDetails/{id}', [CourseController::class, 'view'])->name('coursesDetails');
+Route::get('/addReview/{id}', [CourseController::class, 'addReview'])->name('addReview');
+
 
 
 

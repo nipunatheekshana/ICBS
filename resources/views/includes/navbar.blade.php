@@ -52,6 +52,9 @@
                 <li>
                     <a href="{{ route('contact') }}">Contact</a>
                 </li>
+                <li>
+                    <a href="{{ url('https://www.studysolutions.lk/?demotype=agntclient&agntclient=TWpBeU5EQTBNalV4TURRMk16QllVbGhCUkc1U1l3PT0=') }}">Study abroad</a>
+                </li>
             </ul>
         </div><!-- /.navbar-collapse -->
         <div class="right-side-box">

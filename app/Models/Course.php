@@ -26,4 +26,8 @@ class Course extends Model
     {
         return $this->hasMany(CourseCareerPath::class);
     }
+    public function courseReviews(): HasMany
+    {
+        return $this->hasMany(CourseReview::class);
+    }
 }

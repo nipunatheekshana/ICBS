@@ -7,9 +7,11 @@ use App\Models\Course;
 use App\Models\CourseCurriculum;
 use App\Models\CourseDiscriptionBuletline;
 use App\Models\CourseCareerPath;
+use App\Models\CourseReview;
 use App\Models\Department;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -21,10 +23,10 @@ class CourseController extends Controller
     }
     public static function view($id)
     {
-        $Course = Course::where('id',$id)->with('department','courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')->first();
-        $moduleCount=CourseCurriculum::where('course_id',$id)->count();
+        $Course = Course::where('id', $id)->with('department', 'courseDiscriptionBuletlines', 'courseCurriculums', 'CourseCareerPaths', 'courseReviews.user')->first();
+        $moduleCount = CourseCurriculum::where('course_id', $id)->count();
         $recentCourses = Course::with('department')->latest()->take(3)->get();
-        return view("pages.course-details", compact('Course','moduleCount','recentCourses'));
+        return view("pages.course-details", compact('Course', 'moduleCount', 'recentCourses'));
     }
     public function save(Request $request)
     {
@@ -168,7 +170,6 @@ class CourseController extends Controller
             return $this->responseBody(false, "save", "Something went wrong", $exception->getMessage());
         }
     }
-
     public function loadCourses()
     {
         try {
@@ -197,13 +198,12 @@ class CourseController extends Controller
             return $this->responseBody(false, "User", "Something went wrong", $exception->getMessage());
         }
     }
-
     public function loadCourse($id)
     {
         try {
             $Course = Course::where('id', $id)
-            ->with('courseDiscriptionBuletlines','courseCurriculums','CourseCareerPaths')
-            ->first();
+                ->with('courseDiscriptionBuletlines', 'courseCurriculums', 'CourseCareerPaths')
+                ->first();
             return $this->responseBody(true, "loadCourse", "found", $Course);
         } catch (Exception $exception) {
             return $this->responseBody(false, "loadCourse", "error", $exception->getMessage());
@@ -228,6 +228,26 @@ class CourseController extends Controller
             return view("pages.Course-dtails", compact('Course'));
         } catch (Exception $exception) {
             return $this->responseBody(false, "loadCoursetoPage", "error", $exception->getMessage());
+        }
+    }
+    public function addReview($id, Request $request)
+    {
+        $validatedData = $request->validate([
+            'review' => ['required'],
+        ]);
+
+        try {
+            CourseReview::where('course_id', $id)->where('user_id', Auth::user()->id)->delete();
+            
+            $CourseReview = new CourseReview();
+            $CourseReview->course_id = $id;
+            $CourseReview->review = $request->review;
+            $CourseReview->user_id = Auth::user()->id;
+            $CourseReview->save();
+
+            return redirect()->back()->with('success', 'Review added successfully!');
+        } catch (Exception $exception) {
+            return redirect()->back()->withErrors(['error' => 'An error occurred while adding the review.']);
         }
     }
 }
