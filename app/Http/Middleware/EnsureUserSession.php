@@ -19,7 +19,11 @@ class EnsureUserSession
     {
         if (!Auth::check()) {
             return redirect(route('login'));
+        } elseif (Auth::user()->user_type == 1) {
+            //only admins can go to the admin dashboard
+            return $next($request);
+        }elseif (Auth::user()->user_type == 2) {
+            return redirect(route('login'));
         }
-        return $next($request);
     }
 }

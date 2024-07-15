@@ -1,23 +1,20 @@
-console.log('department .js loadimng');
-var parent_url = '/departmentList'
+console.log('FAQ .js loadimng');
+var parent_url = '/FAQList'
 $(document).ready(function () {
 
     $('#btnSave').on('click', function () {
         var form = $('#form');
         var data = new FormData(form.get(0));
-        var url = $('#btnSave').text().trim() === 'Save' ? '/department/save' : '/department/update';
+        var url = $('#btnSave').text().trim() === 'Save' ? '/FAQ/save' : '/FAQ/update';
         saveOrUpdate(url, data, form);
     });
- 
-    var dropdownData = {
-        Teacher: { elementID: '#department_head', key: 'name' },
-    };
-    loadDropDownData( '/department/',dropdownData);
-    loadDepartment();
+
+
+    loadFAQ();
 });
 
 
-function loadDepartment() {
+function loadFAQ() {
     if (window.location.search.length > 0) {
         var sPageURL = window.location.search.substring(1);
         var param = sPageURL.split('&');
@@ -33,7 +30,7 @@ function loadDepartment() {
     if (id) {
         $.ajax({
             type: "GET",
-            url: "/department/loadDepartment/" + id,
+            url: "/FAQ/loadFAQ/" + id,
             processData: false,
             contentType: false,
             cache: false,
@@ -47,9 +44,8 @@ function loadDepartment() {
 
                     $('#hiddenId').val(data.id);
 
-                    $('#name').val(data.name);
-                    $('#code').val(data.code);
-                    $('#department_head').val(data.department_head);
+                    $('#question').val(data.question);
+                    $('#answer').val(data.answer);
                 }
 
             },

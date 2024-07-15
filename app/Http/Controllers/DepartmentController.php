@@ -71,13 +71,7 @@ class DepartmentController extends Controller
     public function delete($id)
     {
         try {
-            $Department = Department::where('id', $id);
-            $img=$Department->first()->image;
-            if ($img && file_exists(public_path('uploads/' . $img))) {
-                unlink(public_path('uploads/' . $img));
-            }
-
-            $Department->delete();
+            $Department = Department::where('id', $id)->delete();
             return $this->responseBody(true, "User", "Department Deleted", null);
         } catch (Exception $exception) {
             return $this->responseBody(false, "User", "Something went wrong", $exception->getMessage());

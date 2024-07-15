@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TeachersController;
@@ -29,9 +30,9 @@ Route::get('/career', function () {
 Route::get('/news', function () {
     return view("pages.news");
 })->name('news');
-Route::get('/faq', function () {
-    return view("pages.faq");
-})->name('faq');
+
+Route::get('/faq', [FAQController::class, 'index'])->name('faq');
+
 Route::get('/departments', function () {
     return view("pages.departments");
 })->name('departments');
@@ -127,4 +128,19 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/course/update', [CourseController::class, 'update']);
     Route::get('/course/loadDropDownData', [CourseController::class, 'loadDropDownData']);
     Route::get('/course/loadCourse/{id}', [CourseController::class, 'loadCourse']);
+
+    //FAQs
+    Route::get('/FAQList', function () {
+        return view("admin.pages.FAQList");
+    })->name('FAQList');
+    Route::get('/FAQList/loadFAQs', [FAQController::class, 'loadFAQs']);
+    Route::delete('/FAQList/delete/{id}', [FAQController::class, 'delete']);
+
+
+    Route::get('/FAQ', function () {
+        return view("admin.pages.FAQ");
+    })->name('FAQ');
+    Route::post('/FAQ/save', [FAQController::class, 'save']);
+    Route::post('/FAQ/update', [FAQController::class, 'update']);
+    Route::get('/FAQ/loadFAQ/{id}', [FAQController::class, 'loadFAQ']);
 });

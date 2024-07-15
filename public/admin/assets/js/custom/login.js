@@ -7,7 +7,7 @@ $(document).ready(function () {
             url: "/logAdmin",
             data: data,
             success: function (response) {
-                console.log(response);
+                // console.log(response);
                 if (response.status == '200') {
                     location.href = response.url;
                 } else {
