@@ -23,10 +23,20 @@ class CourseController extends Controller
     }
     public static function view($id)
     {
-        $Course = Course::where('id', $id)->with('department', 'courseDiscriptionBuletlines', 'courseCurriculums', 'CourseCareerPaths', 'courseReviews.user')->first();
-        $moduleCount = CourseCurriculum::where('course_id', $id)->count();
+        $Course = Course::where('id', $id)
+            ->with(
+                [
+                    'department',
+                    'courseDiscriptionBuletlines',
+                    'courseCurriculums',
+                     'CourseCareerPaths',
+                      'courseReviews.user'
+                ]
+            )
+            ->withCount('courseCurriculums')
+            ->first();
         $recentCourses = Course::with('department')->latest()->take(3)->get();
-        return view("pages.course-details", compact('Course', 'moduleCount', 'recentCourses'));
+        return view("pages.course-details", compact('Course','recentCourses'));
     }
     public function save(Request $request)
     {
@@ -238,7 +248,7 @@ class CourseController extends Controller
 
         try {
             CourseReview::where('course_id', $id)->where('user_id', Auth::user()->id)->delete();
-            
+
             $CourseReview = new CourseReview();
             $CourseReview->course_id = $id;
             $CourseReview->review = $request->review;

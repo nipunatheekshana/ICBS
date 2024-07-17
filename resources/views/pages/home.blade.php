@@ -1,41 +1,30 @@
 @extends('layout.app')
+
+@section('title', 'Home')
+
 @section('content')
     <div class="banner-wrapper">
         <section class="banner-one banner-carousel__one no-dots owl-theme owl-carousel">
-            <div class="banner-one__slide banner-one__slide-one">
-                <div class="container">
-                    <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
-                    <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
-                    <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
-                    <img src="{{ asset('assets/images/slider-1-scratch.png') }}" alt="" class="banner-one__scratch">
-                    <img src="{{ asset('assets/images/slider-1-person-1.png') }}" class="banner-one__person" alt="">
-                    <div class="row no-gutters">
-                        <div class="col-xl-12">
-                            <h3 class="banner-one__title banner-one__light-color">We Can <br>
-                                Teach You</h3><!-- /.banner-one__title -->
-                            <p class="banner-one__tag-line">are you ready to learn?</p><!-- /.banner-one__tag-line -->
-                            <a href="#" class="thm-btn banner-one__btn">Learn More</a>
-                        </div><!-- /.col-xl-12 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.banner-one__slide -->
-            <div class="banner-one__slide banner-one__slide-two">
-                <div class="container">
-                    <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
-                    <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
-                    <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
-                    <img src="{{ asset('assets/images/slider-1-scratch.png') }}" alt="" class="banner-one__scratch">
-                    <img src="{{ asset('assets/images/slider-1-person-2.png') }}" class="banner-one__person" alt="">
-                    <div class="row no-gutters">
-                        <div class="col-xl-12">
-                            <h3 class="banner-one__title banner-one__light-color">We Can <br>
-                                Teach You</h3><!-- /.banner-one__title -->
-                            <p class="banner-one__tag-line">are you ready to learn?</p><!-- /.banner-one__tag-line -->
-                            <a href="#" class="thm-btn banner-one__btn">Learn More</a>
-                        </div><!-- /.col-xl-12 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.banner-one__slide -->
+            @foreach ($frontBanners as $frontBanner)
+                <div class="banner-one__slide banner-one__slide-one">
+                    <div class="container">
+                        <div class="banner-one__bubble-1"></div><!-- /.banner-one__bubble- -->
+                        <div class="banner-one__bubble-2"></div><!-- /.banner-one__bubble- -->
+                        <div class="banner-one__bubble-3"></div><!-- /.banner-one__bubble- -->
+                        <img src="{{ asset('uploads/' . $frontBanner->bg_image) }}" alt=""
+                            class="banner-one__scratch">
+                        <img src="{{ asset('uploads/' . $frontBanner->image) }}" class="banner-one__person"
+                            alt="">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <h3 class="banner-one__title banner-one__light-color">{{ $frontBanner->title }}</h3><!-- /.banner-one__title -->
+                                <p class="banner-one__tag-line">{{ $frontBanner->slogan }}</p><!-- /.banner-one__tag-line -->
+                                <a href="#" class="thm-btn banner-one__btn">Learn More</a>
+                            </div><!-- /.col-xl-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.banner-one__slide -->
+            @endforeach
         </section><!-- /.banner-one -->
         <div class="banner-carousel-btn">
             <a href="#" class="banner-carousel-btn__left-btn"><i class="kipso-icon-left-arrow"></i></a>
@@ -120,529 +109,44 @@
     <section class="course-one course-one__teacher-details home-one">
         <div class="container">
             <div class="course-one__carousel owl-carousel owl-theme">
-                <div class="item">
-                    <div class="course-one__single color-1">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-11.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Development</a><!-- /.course-one__category -->
-                            <h2 class="course-one__title"><a href="course-details-01.html">Vocational Skill
-                                    Certificate for UX-UI Developer</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-01.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-01.html"><i class="far fa-folder-open"></i> 07 Modules</a>
-                                <a href="course-details-01.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
+                @foreach ($Courses as $course)
+                    <div class="item">
+                        <div class="course-one__single color-1">
+                            <div class="course-one__image">
+                                <img src="{{ asset('uploads/' . $course->image) }}" alt="">
+                                <i class="far fa-heart"></i><!-- /.far fa-heart -->
+                            </div><!-- /.course-one__image -->
+                            <div class="course-one__content">
+                                <a href="#"
+                                    class="course-one__category">{{ $course->department->name }}</a><!-- /.course-one__category -->
+                                <h2 class="course-one__title"><a href="course-details-01.html">{{ $course->name }}</a></h2>
+                                <!-- /.course-one__title -->
+                                <div class="course-one__stars">
+                                    <span class="course-one__stars-wrap">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span><!-- /.course-one__stars-wrap -->
+                                    <span class="course-one__count">4.8</span><!-- /.course-one__count -->
+                                    <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
+                                </div><!-- /.course-one__stars -->
+                                <div class="course-one__meta">
+                                    <a href="course-details-01.html"><i class="far fa-clock"></i>
+                                        {{ $course->duration }}</a>
+                                    <a href="course-details-01.html"><i class="far fa-folder-open"></i>
+                                        {{ $course->course_curriculums_count }} Modules</a>
+                                    <a href="course-details-01.html">LKR {{ $course->price }}</a>
+                                </div><!-- /.course-one__meta -->
 
-                            <a href="course-details-01.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
+                                <a href="{{ route('coursesDetails', $course->id) }}" class="course-one__link">See
+                                    Preview</a><!-- /.course-one__link -->
+                            </div><!-- /.course-one__content -->
+                        </div><!-- /.course-one__single -->
 
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-2">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-22.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Development</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-02.html">Vocational Skill
-                                    Certificate for Back-End Developer</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-02.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-02.html"><i class="far fa-folder-open"></i> 07 Modules</a>
-                                <a href="course-details-02.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-02.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-33.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">marketing</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-03.html">Vocational Skill Diploma
-                                    for Full-Stack Developer</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="ccourse-details-03.html"><i class="far fa-clock"></i> 12 Months</a>
-                                <a href="course-details-03.html"><i class="far fa-folder-open"></i> 11 Modules</a>
-                                <a href="course-details-03.html">LKR 72,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-03.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-4">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-44.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Graphic
-                                Design</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-04.html">Vocational Skill
-                                    Certificate for Graphic Design </a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-04.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-04.html"><i class="far fa-folder-open"></i> 08 Modules</a>
-                                <a href="course-details-04.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-04.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-5">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-55.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Graphic
-                                Design</a><!-- /.course-one__category -->
-                            <h2 class="course-one__title"><a href="course-details-05.html">Vocational Skill
-                                    Certificate for 3D Animation </a>
-                            </h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-05.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-05.html"><i class="far fa-folder-open"></i> 08 Modules</a>
-                                <a href="course-details-05.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-05.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-6">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-66.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Graphic
-                                Design</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-06.html">Vocational Skill
-                                    Certificate for Video Editing </a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-06.html.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-06.html"><i class="far fa-folder-open"></i> 08 Modules</a>
-                                <a href="course-details-06.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-06.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-1">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-77.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">development</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-07.html">Vocational Skill Diploma
-                                    for Multimedia</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-07.html"><i class="far fa-clock"></i> 12 Months</a>
-                                <a href="course-details-07.html"><i class="far fa-folder-open"></i> 7 Modules</a>
-                                <a href="course-details-07.html">LKR 108,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-07.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-2">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-88.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">It &
-                                Software</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-08.html">Vocational Skill
-                                    Certificate for Architectural Design</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-08.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-08.html"><i class="far fa-folder-open"></i> 7 Modules</a>
-                                <a href="course-details-08.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-08.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-99.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Accounting</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-09.html">Vocational Skill
-                                    Certificate for Computerized Accounting</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-09.html"><i class="far fa-clock"></i> 6 Months</a>
-                                <a href="course-details-09.html"><i class="far fa-folder-open"></i> 7 Modules</a>
-                                <a href="course-details-09.html">LKR 36,000.00</a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-09.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1013.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Development</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-10.html">Vocational Skill
-                                    Certificate for Stand-Alone App Developer</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-10.html"><i class="far fa-clock"></i> 6 Months </a>
-                                <a href="course-details-10.html"><i class="far fa-folder-open"></i> 7 Modules </a>
-                                <a href="course-details-10.html">LKR 36,000.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-10.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1014.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Computer
-                                Programming</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-1014.html">Skill Certificate for
-                                    Computer Programming Age:07-09</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-11.html"><i class="far fa-clock"></i> 3 Months </a>
-                                <a href="course-details-11.html"><i class="far fa-folder-open"></i> 9 Modules </a>
-                                <a href="course-details-11.html">$ 75.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-11.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1015.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Computer
-                                Programming</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-1014.html">Skill Certificate for
-                                    Computer Programming Age:10-12 </a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-11.html"><i class="far fa-clock"></i> 3 Months </a>
-                                <a href="course-details-11.html"><i class="far fa-folder-open"></i> 9 Modules </a>
-                                <a href="course-details-11.html">$ 75.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-11.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1016.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Computer
-                                Programming</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-1014.html">Skill Certificate for
-                                    Computer Programming Age:13-15</a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-11.html"><i class="far fa-clock"></i> 3 Months </a>
-                                <a href="course-details-11.html"><i class="far fa-folder-open"></i> 9 Modules </a>
-                                <a href="course-details-11.html">$ 75.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-11.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1017.jpg') }}" alt="">
-
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Degital
-                                Marketing</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-1014.html">Vocational Skill
-                                    Certificate for Digital Marketer
-                                </a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details-11.html"><i class="far fa-clock"></i> 6 Months </a>
-                                <a href="course-details-11.html"><i class="far fa-folder-open"></i> 7 Modules </a>
-                                <a href="course-details-11.html">LKR 36,000.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-11.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="course-one__single color-3">
-                        <div class="course-one__image">
-                            <img src="{{ asset('assets/images/course-1-1018.jpg') }}" alt="">
-                            <i class="far fa-heart"></i><!-- /.far fa-heart -->
-                        </div><!-- /.course-one__image -->
-                        <div class="course-one__content">
-                            <a href="#" class="course-one__category">Office
-                                Administrator</a><!-- /.course-one__category -->
-
-                            <h2 class="course-one__title"><a href="course-details-1014.html">Vocational Skill
-                                    Certificate for Ms. Office 365
-
-                                </a></h2>
-                            <!-- /.course-one__title -->
-                            <div class="course-one__stars">
-                                <span class="course-one__stars-wrap">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </span><!-- /.course-one__stars-wrap -->
-                                <span class="course-one__count">4.8</span><!-- /.course-one__count -->
-                                <span class="course-one__stars-count">250</span><!-- /.course-one__stars-count -->
-                            </div><!-- /.course-one__stars -->
-                            <div class="course-one__meta">
-                                <a href="course-details.html"><i class="far fa-clock"></i> 3 Months </a>
-                                <a href="course-details.html"><i class="far fa-folder-open"></i> 6 Modules </a>
-                                <a href="course-details.html">LKR 19,000.00 </a>
-                            </div><!-- /.course-one__meta -->
-                            <a href="course-details-11.html" class="course-one__link">See
-                                Preview</a><!-- /.course-one__link -->
-                        </div><!-- /.course-one__content -->
-                    </div><!-- /.course-one__single -->
-                </div><!-- /.item -->
-
-
-
-
-
-
-
+                    </div><!-- /.item -->
+                @endforeach
             </div><!-- /.course-one__carousel -->
         </div><!-- /.container -->
     </section><!-- /.course-one course-page -->
@@ -870,8 +374,6 @@
         </div><!-- /.container -->
     </section><!-- /.brand-one -->
 
-
-
     <section class="blog-two">
         <div class="container">
             <div class="block-title text-center">
@@ -879,99 +381,22 @@
                     & updates</h2><!-- /.block-title__title -->
             </div><!-- /.block-title -->
             <div class="blog-two__carousel owl-carousel owl-theme">
-                <div class="item">
-                    <div class="blog-two__single" style="background-image: url(assets/images/blog-2-11.jpg);">
-                        <div class="blog-two__inner">
-                            <a href="news-details.html" class="blog-two__date">
-                                <span>01</span>
-                                Jan
-                            </a><!-- /.blog-two__date -->
-                            <div class="blog-two__meta">
-                                <a href="#">by Admin</a>
-                            </div><!-- /.blog-two__meta -->
-                            <h3 class="blog-two__title">
-                                <a href="news-details.html">Officially launching our Online Courses</a>
-                            </h3><!-- /.blog-two__title -->
-                        </div><!-- /.blog-two__inner -->
-                    </div><!-- /.blog-two__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="blog-two__single" style="background-image: url(assets/images/blog-2-22.jpg);">
-                        <div class="blog-two__inner">
-                            <a href="news-details.html" class="blog-two__date">
-                                <span>06</span>
-                                Jan
-                            </a><!-- /.blog-two__date -->
-                            <div class="blog-two__meta">
-                                <a href="#">by Admin</a>
-
-                            </div><!-- /.blog-two__meta -->
-                            <h3 class="blog-two__title">
-                                <a href="news-details.html">Starting Customized IT Courses for Kids</a>
-                            </h3><!-- /.blog-two__title -->
-                        </div><!-- /.blog-two__inner -->
-                    </div><!-- /.blog-two__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="blog-two__single" style="background-image: url(assets/images/blog-2-3.jpg);">
-                        <div class="blog-two__inner">
-                            <a href="news-details.html" class="blog-two__date">
-                                <span>05</span>
-                                Feb
-                            </a><!-- /.blog-two__date -->
-                            <div class="blog-two__meta">
-                                <a href="#">by Admin</a>
-                            </div><!-- /.blog-two__meta -->
-                            <h3 class="blog-two__title">
-                                <a href="news-details.html">Introducing Vocational Skill Certificate</a>
-                            </h3><!-- /.blog-two__title -->
-                        </div><!-- /.blog-two__inner -->
-                    </div><!-- /.blog-two__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="blog-two__single" style="background-image: url(assets/images/blog-2-1.jpg);">
-                        <div class="blog-two__inner">
-                            <a href="news-details.html" class="blog-two__date">
-                                <span>25</span>
-                                Jul
-                            </a><!-- /.blog-two__date -->
-                            <div class="blog-two__meta">
-                                <a href="#">by Admin</a>
-
-                            </div><!-- /.blog-two__meta -->
-                            <h3 class="blog-two__title">
-                                <a href="news-details.html">Artificial Intelligence For Everyone</a>
-                            </h3><!-- /.blog-two__title -->
-                        </div><!-- /.blog-two__inner -->
-                    </div><!-- /.blog-two__single -->
-                </div><!-- /.item -->
-
-                <div class="item">
-                    <div class="blog-two__single" style="background-image: url(assets/images/blog-2-2.jpg);">
-                        <div class="blog-two__inner">
-                            <a href="news-details.html" class="blog-two__date">
-                                <span>25</span>
-                                Jul
-                            </a><!-- /.blog-two__date -->
-                            <div class="blog-two__meta">
-                                <a href="#">by Admin</a>
-
-                            </div><!-- /.blog-two__meta -->
-                            <h3 class="blog-two__title">
-                                <a href="news-details.html">Research Writing & SPSS Analysis Workshop</a>
-                            </h3><!-- /.blog-two__title -->
-                        </div><!-- /.blog-two__inner -->
-                    </div><!-- /.blog-two__single -->
-                </div><!-- /.item -->
-
-
-
-
-
-
+                @foreach ($newss as $news)
+                    <div class="item">
+                        <div class="blog-two__single"
+                            style="background-image: url({{ asset('uploads/' . $news->image) }});">
+                            <div class="blog-two__inner">
+                                <a href="{{ route('newsDetails', $news->id) }}" class="blog-two__date">
+                                    <span>{{ $news->created_at->format('d') }}</span>
+                                    {{ $news->created_at->format('M') }}
+                                </a><!-- /.blog-two__date -->
+                                <h3 class="blog-two__title">
+                                    <a href="{{ route('newsDetails', $news->id) }}">{{ $news->title }}</a>
+                                </h3><!-- /.blog-two__title -->
+                            </div><!-- /.blog-two__inner -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.item -->
+                @endforeach
             </div><!-- /.blog-two__carousel owl-carousel owl-theme -->
         </div><!-- /.container -->
     </section><!-- /.blog-one blog-page -->

@@ -32,7 +32,7 @@
                                 <h2 class="blog-one__title"><a href="#">{{ $News->title }}</a>
                                 </h2><!-- /.blog-one__title -->
                                 <p class="blog-one__text">"{{ $News->description }}"</p><!-- /.blog-one__text -->
-                                {{-- <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link --> --}}
+                                <a href="{{ route('newsDetails', $News->id) }}" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-4 -->

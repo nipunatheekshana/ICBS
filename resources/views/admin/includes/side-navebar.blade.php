@@ -22,9 +22,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('sampleform') }}">
-                <span class="menu-title">Sample page</span>
-                <i class="mdi mdi-chart-line menu-icon"></i>
+            <a class="nav-link" href="{{ route('frontBannerList') }}">
+                <span class="menu-title">Front Banners</span>
+                <i class="mdi mdi-file-image menu-icon"></i>
             </a>
         </li>
         <li class="nav-item">

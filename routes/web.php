@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegisterController;
@@ -14,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 ############### Site Routes ######################
 ###################################################
 
-Route::get('/', function () {
-    return view("pages.home");
-})->name('home');
+
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+
 Route::get('/about', function () {
     return view("pages.about");
 })->name('about');
@@ -31,6 +33,7 @@ Route::get('/career', function () {
 
 
 Route::get('/news-page', [NewsController::class, 'index'])->name('news');
+Route::get('/newsDetails/{id}', [NewsController::class, 'view'])->name('newsDetails');
 
 Route::get('/faq', [FAQController::class, 'index'])->name('faq');
 
@@ -159,4 +162,19 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/news/save', [NewsController::class, 'save']);
     Route::post('/news/update', [NewsController::class, 'update']);
     Route::get('/news/loadnews/{id}', [NewsController::class, 'loadnews']);
+
+    //frontBanner
+    Route::get('/frontBannerList', function () {
+        return view("admin.pages.frontBannerList");
+    })->name('frontBannerList');
+    Route::get('/frontBannerList/loadfrontBanners', [BannerController::class, 'loadfrontBanners']);
+    Route::delete('/frontBannerList/delete/{id}', [BannerController::class, 'delete']);
+
+
+    Route::get('/frontBanner', function () {
+        return view("admin.pages.frontBanner");
+    });
+    Route::post('/frontBanner/save', [BannerController::class, 'save']);
+    Route::post('/frontBanner/update', [BannerController::class, 'update']);
+    Route::get('/frontBanner/loadfrontBanner/{id}', [BannerController::class, 'loadfrontBanner']);
 });

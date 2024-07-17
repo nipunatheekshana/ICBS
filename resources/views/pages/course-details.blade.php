@@ -283,7 +283,7 @@
                             <span class="course-details__meta-icon">
                                 <i class="far fa-folder-open"></i><!-- /.far fa-folder-open -->
                             </span><!-- /.course-details__icon -->
-                            Modules : <span>{{ $moduleCount }}</span>
+                            Modules : <span>{{ $Course->course_curriculums_count  }}</span>
                         </a><!-- /.course-details__meta-link -->
                         <a href="#" class="course-details__meta-link">
                             <span class="course-details__meta-icon">

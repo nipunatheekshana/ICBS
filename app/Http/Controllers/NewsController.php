@@ -15,6 +15,13 @@ class NewsController extends Controller
          return view('pages.news',compact('Newss'));
 
     }
+    public static function view($id){
+        $News=News::where('id',$id)->first();
+        $recentNewss = News::latest()->take(3)->get();
+
+        return view('pages.news-details',compact('News','recentNewss'));
+
+   }
     public function save(Request $request)
     {
         $validatedData = $request->validate([

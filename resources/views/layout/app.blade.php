@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    @yield('head')
 </head>
 
 <body>
