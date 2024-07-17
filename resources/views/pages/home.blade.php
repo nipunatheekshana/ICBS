@@ -195,13 +195,14 @@
                                 Place a Inquiry
                             </h2><!-- /.become-teacher__form-title -->
                         </div><!-- /.become-teacher__top -->
-                        <form action="assets/inc/sendemail.php"
+                        <form id="inquiryForm"
                             class="become-teacher__form-content contact-form-validated">
-                            <input type="text" placeholder="Your Name" name="name">
-                            <input type="text" placeholder="Email Address" name="email">
-                            <input type="text" placeholder="Phone Number" name="phone">
-                            <input type="text" placeholder="Course" name="message">
-                            <button type="submit" class="thm-btn become-teacher__form-btn">Apply For It</button>
+                            {{ csrf_field() }}
+                            <input type="text" placeholder="Your Name" name="name" id="name">
+                            <input type="text" placeholder="Email Address" name="email" id="email">
+                            <input type="text" placeholder="Phone Number" name="phone" id="phone">
+                            <input type="text" placeholder="Course" name="course" id="course">
+                            <button type="button" id="btnSaveInquiry" class="thm-btn become-teacher__form-btn">Apply For It</button>
                         </form><!-- /.become-teacher__form-content -->
                         <div class="result text-center"></div><!-- /.result -->
                     </div><!-- /.become-teacher__form -->
@@ -425,4 +426,8 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.mailchimp-one -->
+@endsection
+
+@section('script')
+    <script src="{{ url('assets/js/custom/home.js') }}"></script>
 @endsection

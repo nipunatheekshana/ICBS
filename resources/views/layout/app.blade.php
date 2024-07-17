@@ -24,6 +24,11 @@
     <link rel="stylesheet" href="{{ asset('assets/css/vegas.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/toastr/toastr.min.css') }}">
+
+
+    <script src="{{ url('admin/assets/js/custom/commonfeaturess.js') }}"></script>
+
     @yield('head')
 </head>
 
@@ -51,8 +56,12 @@
     <script src={{ asset('assets/js/vegas.min.js') }}></script>
     <script src={{ asset('assets/js/jquery.validate.min.js') }}></script>
     <script src={{ asset('assets/js/jquery.ajaxchimp.min.js') }}></script>
+    <script src="{{ asset('admin/assets/vendors/toastr/toastr.min.js') }}"></script>
+
     <!-- template scripts -->
     <script src={{ asset('assets/js/theme.js') }}></script>
+
+    @yield('script')
 </body>
 
 </html>

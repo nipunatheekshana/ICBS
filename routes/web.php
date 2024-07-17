@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RegisterController;
@@ -22,6 +23,7 @@ Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/about', function () {
     return view("pages.about");
 })->name('about');
+Route::post('/home/saveInquiry', [InquiryController::class, 'save']);
 
 Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
 Route::get('/teachers/loadTeachertoPage/{id}', [TeachersController::class, 'loadTeachertoPage'])->name('teacher.loadTeacher');
@@ -177,4 +179,17 @@ Route::middleware(['is.logged'])->group(function () {
     Route::post('/frontBanner/save', [BannerController::class, 'save']);
     Route::post('/frontBanner/update', [BannerController::class, 'update']);
     Route::get('/frontBanner/loadfrontBanner/{id}', [BannerController::class, 'loadfrontBanner']);
+
+    //Inquiry
+    Route::get('/inquiryList', function () {
+        return view("admin.pages.inquiryList");
+    })->name('inquiryList');
+    Route::get('/inquiryList/loadinquirys', [InquiryController::class, 'loadinquirys']);
+    Route::delete('/inquiryList/delete/{id}', [InquiryController::class, 'delete']);
+
+
+    Route::get('/inquiry', function () {
+        return view("admin.pages.inquiry");
+    });
+    Route::get('/inquiry/loadinquiry/{id}', [InquiryController::class, 'loadinquiry']);
 });

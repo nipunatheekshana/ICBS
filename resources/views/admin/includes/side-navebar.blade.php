@@ -28,6 +28,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('inquiryList') }}">
+                <span class="menu-title">Inquiries</span>
+                <i class="mdi  mdi-help menu-icon"></i>
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('teacherList') }}">
                 <span class="menu-title">Teachers</span>
                 <i class="mdi mdi-account menu-icon"></i>
